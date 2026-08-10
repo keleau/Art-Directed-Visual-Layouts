@@ -11,6 +11,7 @@ import { CookScreen } from './screens/CookScreen'
 import { RecipeScreen } from './screens/RecipeScreen'
 import { MeScreen } from './screens/MeScreen'
 import { SearchScreen } from './screens/SearchScreen'
+import { ShopScreen } from './screens/ShopScreen'
 
 export default function App() {
   const todayHero = useMemo(() => getDailyHeroData(), [])
@@ -58,7 +59,7 @@ export default function App() {
   const currentCountryData = COUNTRIES[todayCountry]
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-stone-300 p-4">
+    <div className="w-screen h-screen flex items-center justify-center bg-stone-300">
       <div
         className="relative overflow-hidden bg-[#F3ECE0] shadow-[0_40px_80px_-20px_rgba(26,18,8,0.45)]"
         style={{ width: '390px', height: '844px', borderRadius: '44px' }}
@@ -136,6 +137,12 @@ export default function App() {
                 onBack={() => goTo('explore')}
                 onRecipe={(meal, c) => openRecipe(meal, c)}
               />
+            </div>
+          </div>
+
+          <div className={`screen-wrap ${showScreen('shop') ? 'screen-visible' : 'screen-hidden'}`}>
+            <div className="h-full pt-0">
+              <ShopScreen onBack={() => goTo('explore')} />
             </div>
           </div>
         </div>

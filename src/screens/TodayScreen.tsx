@@ -561,7 +561,7 @@ export function TodayScreen(props: {
       {/* ─── 优化后入场动画：极简编辑风 ─── */}
       {showIntro && (
         <div
-          className={`fixed inset-0 z-50 pointer-events-none transition-opacity duration-1000 ease-out ${
+          className={`absolute inset-0 bottom-[56px] z-50 pointer-events-none transition-opacity duration-1000 ease-out ${
             introPhase === 2 ? 'opacity-0' : 'opacity-100'
           }`}
         >

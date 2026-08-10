@@ -1,5 +1,5 @@
-export type Screen = 'splash' | 'explore' | 'today' | 'cook' | 'recipe' | 'me' | 'search'
-export type NavScreen = 'explore' | 'today' | 'cook' | 'me'
+export type Screen = 'splash' | 'explore' | 'today' | 'cook' | 'recipe' | 'me' | 'search' | 'shop'
+export type NavScreen = 'explore' | 'today' | 'cook' | 'shop' | 'me'
 export type Country = 'japan' | 'italy' | 'mexico' | 'france' | 'thailand' | 'china'
 export type MealKey = 'breakfast' | 'lunch' | 'dinner' | 'dessert' | 'snack' | 'streetFood'
 
@@ -47,6 +47,26 @@ export type HeroData = {
   chefTitle: string
   heroSubtitle: string
   chefLetter: string
+}
+
+export type ShopCategory = 'mealKit' | 'ingredient' | 'vegetable' | 'sauce' | 'all'
+
+export type ShopItem = {
+  id: string
+  name: string
+  cn: string
+  price: number
+  unit: string
+  img: string
+  category: ShopCategory
+  country?: Country
+  description: string
+  stock: number
+}
+
+export type CartItem = {
+  item: ShopItem
+  quantity: number
 }
 
 export type IconProps = {

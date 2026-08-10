@@ -25,7 +25,7 @@ export function BottomNav({
 
   return (
     <div
-      className="absolute bottom-0 left-0 right-0 glass-nav border-t border-stone-300/50 z-50"
+      className="absolute bottom-0 left-0 right-0 glass-nav border-t border-stone-300/50 z-[100]"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="relative">

@@ -143,3 +143,30 @@ export const IconClockHistory = (p: IconProps) => (
     <circle cx="12" cy="12" r="9" />
   </svg>
 )
+
+export const IconBag = (p: IconProps) => (
+  <svg {...baseIconProps(p)}>
+    <path d="M6 7h12l-1 13H7L6 7z" />
+    <path d="M9 7V5a3 3 0 0 1 6 0v2" />
+  </svg>
+)
+
+export const IconMinus = (p: IconProps) => (
+  <svg {...baseIconProps(p)}>
+    <path d="M5 12h14" />
+  </svg>
+)
+
+export const IconPlus = (p: IconProps) => (
+  <svg {...baseIconProps(p)}>
+    <path d="M12 5v14M5 12h14" />
+  </svg>
+)
+
+export const IconShoppingCart = (p: IconProps) => (
+  <svg {...baseIconProps(p)}>
+    <circle cx="9" cy="20" r="1.5" />
+    <circle cx="18" cy="20" r="1.5" />
+    <path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6" />
+  </svg>
+)

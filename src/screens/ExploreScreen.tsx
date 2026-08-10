@@ -88,16 +88,16 @@ export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStar
         </Reveal>
 
         <Reveal delay={200}>
-          <div className="px-6 mt-6 flex gap-4 items-start">
-            <span className="font-display text-[48px] leading-none text-[#E8650A]/60 -mt-2">"</span>
-            <p className="font-display italic text-stone-700 text-[17px] leading-snug -mt-1 flex-1">
+          <div className="px-6 mt-4 flex gap-4 items-start">
+            <span className="font-display text-[40px] leading-none text-[#E8650A]/60 -mt-1">"</span>
+            <p className="font-display italic text-stone-700 text-[15px] leading-relaxed flex-1">
               {hero.quote}
             </p>
           </div>
         </Reveal>
       </section>
 
-      <section className="bg-[#F3ECE0] py-12">
+      <section className="bg-[#F3ECE0] py-8">
         <Reveal>
           <div className="px-6">
             <Eyebrow num="02">From the Atlas</Eyebrow>
