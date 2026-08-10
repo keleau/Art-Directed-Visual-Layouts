@@ -1,4 +1,4 @@
-﻿import type { Screen, NavScreen, Country, MealKey, Meal, CountryData, HeroData, IconProps } from './types'
+import type { Screen, NavScreen, Country, MealKey, Meal, CountryData, HeroData, IconProps } from './types'
 
 export const IMGS = {
   // Country landmarks (for hero sections)
@@ -770,6 +770,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Marco Tosi',
     chefTitle: 'Head Chef · Rome, Est. 1998',
     heroSubtitle: 'Roma · Italia',
+    chefLetter: '在罗马，我们相信最好的食材不需要太多修饰。一把好橄榄油，一撮海盐，就能让一盘意面变成一次回忆。',
   },
   {
     dayLabel: 'Tuesday',
@@ -784,6 +785,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Hiroshi Tanaka',
     chefTitle: 'Head Chef · Tokyo, Est. 2005',
     heroSubtitle: 'Tōkyō · 日本',
+    chefLetter: '厨師の心構えは「一期一会」です。お客様との一瞬を大切に、丁寧に作り上げます。',
   },
   {
     dayLabel: 'Wednesday',
@@ -798,6 +800,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Ana Herrera',
     chefTitle: 'Head Chef · Oaxaca, Est. 2002',
     heroSubtitle: 'Ciudad de México · México',
+    chefLetter: 'La comida mexicana es fiesta, es familia, es historia. Cada plato cuenta una historia de nuestro pasado.',
   },
   {
     dayLabel: 'Thursday',
@@ -812,6 +815,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Pierre Laurent',
     chefTitle: 'Head Chef · Paris, Est. 2001',
     heroSubtitle: 'Paris · France',
+    chefLetter: 'La cuisine française, c\'est une question de temps, de patience, et de beurre. Toujours plus de beurre.',
   },
   {
     dayLabel: 'Friday',
@@ -826,6 +830,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Somchai Srisuk',
     chefTitle: 'Head Chef · Bangkok, Est. 2003',
     heroSubtitle: 'กรุงเทพฯ · ไทย',
+    chefLetter: 'อาหารไทยมี 4 รสชาติหลัก: หวาน เปรี้ยว เค็ม เผ็ด เราต้องสมดุลทั้งหมดในชามเดียว',
   },
   {
     dayLabel: 'Saturday',
@@ -840,6 +845,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     chefName: 'Lau Wei',
     chefTitle: 'Head Chef · Sichuan, Est. 1985',
     heroSubtitle: 'Zhōngguó · 中国',
+    chefLetter: '川菜讲究一菜一格，百菜百味。麻辣只是表象，真正的精髓在于调味的平衡与层次。',
   },
   {
     dayLabel: 'Sunday',
@@ -854,6 +860,7 @@ export const DAILY_HERO_DATA: HeroData[] = [
     description: 'Sunday in China.',
     latLng: '30.5728° N / 104.0668° E',
     heroSubtitle: 'Zhōngguó · 中国',
+    chefLetter: '江南菜讲究细腻与淡雅，犹如水墨画。每一道菜都是季节的馈赠，也是厨师的心意。',
   },
 ]
 

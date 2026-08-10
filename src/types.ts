@@ -46,6 +46,7 @@ export type HeroData = {
   chefName: string
   chefTitle: string
   heroSubtitle: string
+  chefLetter: string
 }
 
 export type IconProps = {

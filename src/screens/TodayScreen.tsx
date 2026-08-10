@@ -9,9 +9,10 @@ import {
 } from '../data'
 
 // ─── Session-level tracking for entrance animation ───────────
-// Track last played time to prevent rapid re-triggering
-let _lastPlayedTime = 0
-const MIN_REPLAY_INTERVAL = 2000 // Minimum 2 seconds between replays
+const playedPeriods = new Set<string>()
+
+// Reset on module load to ensure animations play on first visit
+playedPeriods.clear()
 
 // ─── China timezone (UTC+8) helpers ────────────────────────
 function getChinaHour(): number {
@@ -309,11 +310,11 @@ export function TodayScreen(props: {
   const effectiveCountry = autoCountry && todayCountry ? todayCountry : country
   const c = COUNTRIES[effectiveCountry]
 
-  // Play entrance animation when entering Today page or when period changes
+  // Play entrance animation once per time period per session
   useEffect(() => {
-    const now = Date.now()
-    if (active && now - _lastPlayedTime > MIN_REPLAY_INTERVAL) {
-      _lastPlayedTime = now
+    const periodKey = `${period}-${effectiveCountry}`
+    if (active && !playedPeriods.has(periodKey)) {
+      playedPeriods.add(periodKey)
       setShowIntro(true)
       setIntroPhase(1)
 
@@ -564,7 +565,7 @@ export function TodayScreen(props: {
             introPhase === 2 ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          {/* 背景层 - 优雅项目配色 */}
+          {/* 背景层 */}
           <div className="absolute inset-0 intro-bg-fade">
             {period === 'morning' && (
               <div

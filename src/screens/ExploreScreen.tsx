@@ -157,21 +157,22 @@ export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStar
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="flex gap-5">
-              <div className="flex-1">
-                <p className="font-display italic text-[24px] text-white leading-[1.4] -mb-2">
-                  "{hero.quote}"
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#E8650A]/20 flex items-center justify-center border border-[#E8650A]/40">
-                    <IconChef size={18} stroke="#E8650A" />
-                  </div>
-                  <div>
-                    <p className="text-white text-sm font-medium">{hero.chefName}</p>
-                    <p className="text-white/50 text-[11px]">{hero.chefTitle}</p>
-                  </div>
-                </div>
+            <div className="flex items-center gap-4 mb-5">
+              <div className="w-10 h-10 rounded-full bg-[#E8650A]/20 flex items-center justify-center border border-[#E8650A]/40">
+                <IconChef size={18} stroke="#E8650A" />
               </div>
+              <div>
+                <p className="text-white text-sm font-medium">{hero.chefName}</p>
+                <p className="text-white/50 text-[11px]">{hero.chefTitle}</p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="relative border-l-2 border-[#E8650A]/40 pl-4 ml-2">
+              <p className="font-display italic text-[18px] text-white/90 leading-relaxed">
+                {hero.chefLetter}
+              </p>
             </div>
           </Reveal>
 
@@ -183,8 +184,8 @@ export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStar
                 <p className="font-display text-stone-500 text-center text-[12px]">{chefMeal.cn}</p>
               </div>
               <div className="w-[42%] pt-2">
-                <p className="text-white/70 text-[10px] tracking-[0.3em] uppercase">Signature</p>
-                <h4 className="font-display text-[24px] text-white font-bold leading-tight mt-1">Tonight's<br/>Featured Dish</h4>
+                <p className="text-white/70 text-[10px] tracking-[0.3em] uppercase">Chef's Pick</p>
+                <h4 className="font-display text-[24px] text-white font-bold leading-tight mt-1">Signature<br/>Dish</h4>
                 <div className="mt-4 space-y-2 text-[12px] text-white/70">
                   <div className="flex justify-between"><span className="text-white/40">Time</span><span>{chefMeal.time}</span></div>
                   <div className="flex justify-between"><span className="text-white/40">Level</span><span>{chefMeal.difficulty}</span></div>
