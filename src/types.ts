@@ -1,5 +1,5 @@
-export type Screen = 'splash' | 'explore' | 'today' | 'cook' | 'recipe' | 'me' | 'search' | 'shop'
-export type NavScreen = 'explore' | 'today' | 'cook' | 'shop' | 'me'
+export type Screen = 'splash' | 'explore' | 'today' | 'cook' | 'recipe' | 'me' | 'search' | 'shop' | 'shop-item'
+export type NavScreen = 'explore' | 'today' | 'cook' | 'me'
 export type Country = 'japan' | 'italy' | 'mexico' | 'france' | 'thailand' | 'china'
 export type MealKey = 'breakfast' | 'lunch' | 'dinner' | 'dessert' | 'snack' | 'streetFood'
 
@@ -49,7 +49,7 @@ export type HeroData = {
   chefLetter: string
 }
 
-export type ShopCategory = 'mealKit' | 'ingredient' | 'vegetable' | 'sauce' | 'all'
+export type ShopCategory = 'ingredient' | 'condiment' | 'dish' | 'all'
 
 export type ShopItem = {
   id: string
@@ -62,6 +62,10 @@ export type ShopItem = {
   country?: Country
   description: string
   stock: number
+  sourceMeal?: string
+  tags?: string[]
+  mealKey?: MealKey
+  isNotPurchasable?: boolean
 }
 
 export type CartItem = {

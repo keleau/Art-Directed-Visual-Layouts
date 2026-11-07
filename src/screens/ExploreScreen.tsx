@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import {
-  IconArrowRight, IconSearch, IconBookmark, IconChef,
+  IconArrowRight, IconSearch, IconBookmark, IconChef, IconBag,
   Parallax, Eyebrow, Reveal,
 } from '../components'
 import { type HeroData, type CountryData, DESTINATIONS } from '../data'
@@ -10,13 +10,15 @@ function altSnackKey(primary: MealKey): MealKey {
   return primary === 'streetFood' ? 'snack' : 'streetFood'
 }
 
-export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStartJourney, onSearchOpen }: {
+export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStartJourney, onSearchOpen, onShopOpen, onShopCountry }: {
   hero: HeroData
   countryData: CountryData
   chefMealKey: MealKey
   onRecipe: (mealKey: MealKey) => void
   onStartJourney: () => void
   onSearchOpen: () => void
+  onShopOpen: () => void
+  onShopCountry: (countryId: string) => void
 }) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [stick, setStick] = useState(false)
@@ -49,6 +51,13 @@ export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStar
               aria-label="搜索"
             >
               <IconSearch size={18} />
+            </button>
+            <button
+              onClick={onShopOpen}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-stone-200/60 active:scale-90 transition-colors"
+              aria-label="商店"
+            >
+              <IconBag size={18} />
             </button>
             <IconBookmark size={18} />
           </div>
@@ -207,13 +216,13 @@ export function ExploreScreen({ hero, countryData, chefMealKey, onRecipe, onStar
               <Eyebrow num="03">More Destinations</Eyebrow>
               <h3 className="font-display text-[24px] font-bold text-stone-900 mt-2">The Long List</h3>
             </div>
-            <button className="text-[11px] tracking-widest uppercase text-stone-600 flex items-center gap-1 hover:text-[#E8650A] transition-colors">All <IconArrowRight size={12} /></button>
+            <button onClick={() => onShopCountry('all')} className="text-[11px] tracking-widest uppercase text-stone-600 flex items-center gap-1 hover:text-[#E8650A] transition-colors">All <IconArrowRight size={12} /></button>
           </div>
         </Reveal>
         <Reveal delay={100}>
           <div className="mt-6 flex gap-4 overflow-x-auto px-6 pb-3">
             {DESTINATIONS.map((d, i) => (
-              <div key={d.id} className="flex-shrink-0" style={{ width: '150px', transform: `${[ '-2deg', '1deg', '-1deg', '2deg', '-2deg' ][i]}` }}>
+              <div key={d.id} className="flex-shrink-0 cursor-pointer" style={{ width: '150px', transform: `${[ '-2deg', '1deg', '-1deg', '2deg', '-2deg' ][i]}` }} onClick={() => onShopCountry(d.id)}>
                 <div className="bg-white/80 backdrop-blur-md p-2 rounded-sm shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-white/40">
                   <img src={d.img} alt={d.en} className="w-full h-[140px] object-cover" />
                   <div className="px-1 pt-2 pb-1">

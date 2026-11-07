@@ -40,7 +40,7 @@ export const IMGS = {
   // Japan dishes
   tamagoGohan: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=1200&h=1500&fit=crop&auto=format',
   sukiyaki:    'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1200&h=1500&fit=crop&auto=format',
-  matchaParfait: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=1200&h=1500&fit=crop&auto=format',
+  matchaParfait: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Matcha%20parfait%20dessert%20in%20clear%20glass%20with%20green%20matcha%20ice%20cream%20layers%2C%20mochi%20balls%2C%20red%20bean%20paste%2C%20food%20photography&image_size=portrait_4_3',
   karaageDon:  'https://images.pexels.com/photos/31317036/pexels-photo-31317036.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop',
   wagyuKatsu:  'https://images.unsplash.com/photo-1580822184713-fc5d50fe4cf1?w=1200&h=1500&fit=crop&auto=format',
   // Italy dishes
@@ -872,70 +872,199 @@ export function getDailyHeroData(date: Date = new Date()): HeroData {
 
 // ─── Shop Images ──────────────────────────────────────────
 const SHOP_IMGS = {
-  // Meal Kits by Country
-  kitItalyPasta: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=400&fit=crop',
-  kitJapanRamen: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=400&fit=crop',
-  kitMexicoTacos: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=400&fit=crop',
-  kitFranceCrepe: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&h=400&fit=crop',
-  kitThailandPadThai: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&h=400&fit=crop',
-  kitChinaMapoTofu: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=400&fit=crop',
-  // Vegetables
-  vegTomato: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop',
-  vegBasil: 'https://images.unsplash.com/photo-1600692370834-0006872b49f9?w=400&h=400&fit=crop',
-  vegMushroom: 'https://images.unsplash.com/photo-1630473068968-f2096c7b7152?w=400&h=400&fit=crop',
-  vegLemongrass: 'https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=400&h=400&fit=crop',
-  vegChili: 'https://images.unsplash.com/photo-1583119912267-cc97c911e416?w=400&h=400&fit=crop',
-  vegCilantro: 'https://images.unsplash.com/photo-1587334274328-64186a80aeee?w=400&h=400&fit=crop',
-  // Ingredients & Sauces
-  ingOliveOil: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop',
-  ingSoySauce: 'https://images.unsplash.com/photo-1618679447802-0a7a1f6c2a6b?w=400&h=400&fit=crop',
-  ingSaffron: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&h=400&fit=crop',
-  ingTruffle: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop',
-  ingWasabi: 'https://images.unsplash.com/photo-1636363685896-dd61a062ba9e?w=400&h=400&fit=crop',
-  ingCoconutMilk: 'https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&h=400&fit=crop',
-  // Country landmarks for nav
-  landmarkItaly: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=300&h=300&fit=crop',
-  landmarkJapan: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=300&h=300&fit=crop',
-  landmarkMexico: 'https://images.pexels.com/photos/19231570/pexels-photo-19231570.jpeg?w=300&h=300&fit=crop',
-  landmarkFrance: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=300&h=300&fit=crop',
-  landmarkThailand: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=300&h=300&fit=crop',
-  landmarkChina: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=300&h=300&fit=crop',
+  // Ingredient Shop — verified Unsplash URLs
+  ingPasta:          'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400&h=400&fit=crop&auto=format',
+  ingParmesan:       'https://images.unsplash.com/photo-1655662844300-e59c3d2e7587?w=400&h=400&fit=crop&auto=format',
+  ingBeef:           'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=400&fit=crop&auto=format',
+  ingRamen:          'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=400&fit=crop&auto=format',
+  ingChashu:         'https://images.unsplash.com/photo-1541696490-8744a5dc0228?w=400&h=400&fit=crop&auto=format',
+  ingCornTortilla:   'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=400&fit=crop&auto=format',
+  ingAvocado:        'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=400&fit=crop&auto=format',
+  ingFlour:          'https://images.unsplash.com/photo-1629804257810-dd14bce6dc67?w=400&h=400&fit=crop&auto=format',
+  ingButter:         'https://images.unsplash.com/photo-1608100742430-b8c4b9bf1276?w=400&h=400&fit=crop&auto=format',
+  ingRiceNoodle:     'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&h=400&fit=crop&auto=format',
+  ingTofu:           'https://images.unsplash.com/photo-1668434344247-5daf7c7aff63?w=400&h=400&fit=crop&auto=format',
+  ingPorkMince:      'https://images.unsplash.com/photo-1612156502174-bbbad9882af2?w=400&h=400&fit=crop&auto=format',
+  ingTomato:         'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop&auto=format',
+  ingBasil:          'https://images.unsplash.com/photo-1591495746097-8a92864d5c1f?w=400&h=400&fit=crop&auto=format',
+  ingMushroom:       'https://images.unsplash.com/photo-1755108906864-fdaadb8ab5f1?w=400&h=400&fit=crop&auto=format',
+  ingEgg:            'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=400&h=400&fit=crop&auto=format',
+  ingCream:          'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop&auto=format',
+  ingChicken:        'https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=400&h=400&fit=crop&auto=format',
+  ingShrimp:         'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&h=400&fit=crop&auto=format',
+
+  // Verified replacement images (fix mismatches)
+  ingMozzarella:     'https://images.unsplash.com/photo-1585828922344-85c9daa264b0?w=400&h=400&fit=crop&auto=format',
+  ingProsciutto:     'https://images.unsplash.com/photo-1687966742999-95eeee07fb47?w=400&h=400&fit=crop&auto=format',
+  ingSalmon:         'https://images.unsplash.com/photo-1739785938354-1a7bb4dae625?w=400&h=400&fit=crop&auto=format',
+  ingTuna:           'https://images.unsplash.com/photo-1659881981676-33ab127152c0?w=400&h=400&fit=crop&auto=format',
+  ingRice:           'https://images.unsplash.com/photo-1602881916963-5daf2d97c06e?w=400&h=400&fit=crop&auto=format',
+  ingLime:           'https://images.unsplash.com/photo-1552914953-938eef0ce926?w=400&h=400&fit=crop&auto=format',
+  ingCilantro:       'https://images.unsplash.com/photo-1553787434-45e1d245bfbb?w=400&h=400&fit=crop&auto=format',
+  ingScallion:       'https://images.unsplash.com/photo-1687718643476-86ffc7a52815?w=400&h=400&fit=crop&auto=format',
+  ingLemongrass:     'https://images.unsplash.com/photo-1636396279211-25e3a26b2621?w=400&h=400&fit=crop&auto=format',
+
+  // New local specialty images
+  ingGarlic:         'https://images.unsplash.com/photo-1587049332298-1c42e83937a7?w=400&h=400&fit=crop&auto=format',
+  ingOnion:          'https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?w=400&h=400&fit=crop&auto=format',
+  ingCarrot:         'https://images.unsplash.com/photo-1606355601253-61a57fe375e7?w=400&h=400&fit=crop&auto=format',
+  ingGinger:         'https://images.unsplash.com/photo-1630623093145-f606591c2546?w=400&h=400&fit=crop&auto=format',
+  ingChili:          'https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=400&h=400&fit=crop&auto=format',
+  ingNori:           'https://images.unsplash.com/photo-1614272460808-06d0bc191504?w=400&h=400&fit=crop&auto=format',
+  ingMiso:           'https://images.unsplash.com/photo-1610328479607-67e69b2fc68c?w=400&h=400&fit=crop&auto=format',
+  ingSunDriedTomato: 'https://images.unsplash.com/photo-1723993265436-97ac5724c98e?w=400&h=400&fit=crop&auto=format',
+  ingNoodles:        'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=400&fit=crop&auto=format',
+  ingCapers:         'https://images.unsplash.com/photo-1527964105263-1ac6265a569f?w=400&h=400&fit=crop&auto=format',
+  ingComte:          'https://images.unsplash.com/photo-1683314573422-649a3c6ad784?w=400&h=400&fit=crop&auto=format',
+  ingGluten:         'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=400&fit=crop&auto=format',
+  ingBrisket:        'https://images.unsplash.com/photo-1613454320437-0c228c8b1723?w=400&h=400&fit=crop&auto=format',
+  ingGalangal:       'https://images.unsplash.com/photo-1768729341217-0e11cb959252?w=400&h=400&fit=crop&auto=format',
+
+  // Condiment Shop — verified
+  condOliveOil:      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop&auto=format',
+  condSoySauce:      'https://images.unsplash.com/photo-1732681048333-f3b2785a0e31?w=400&h=400&fit=crop&auto=format',
+  condSaffron:       'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&h=400&fit=crop&auto=format',
+  condTruffle:       'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop&auto=format',
+  condWasabi:        'https://images.unsplash.com/photo-1592180387432-d735c59eee1a?w=400&h=400&fit=crop&auto=format',
+  condCoconutMilk:   'https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&h=400&fit=crop&auto=format',
+  condBalsamic:      'https://images.unsplash.com/photo-1499126167718-c87f5c1387e8?w=400&h=400&fit=crop&auto=format',
+  condSalsa:         'https://images.unsplash.com/photo-1722239312486-2675eac7cec3?w=400&h=400&fit=crop&auto=format',
+  condMustard:       'https://images.unsplash.com/photo-1472141521881-95d0e87e2e39?w=400&h=400&fit=crop&auto=format',
+  condFishSauce:     'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=400&fit=crop&auto=format',
+  condDouban:        'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=400&fit=crop&auto=format',
+  condBlackPepper:   'https://images.unsplash.com/photo-1649952052743-5e8f37c348c5?w=400&h=400&fit=crop&auto=format',
+  condSeaSalt:       'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=400&h=400&fit=crop&auto=format',
+  condPaprika:       'https://images.unsplash.com/photo-1620207418302-439b387441b0?w=400&h=400&fit=crop&auto=format',
+  condOysterSauce:   'https://images.unsplash.com/photo-1621247473481-88661d45084e?w=400&h=400&fit=crop&auto=format',
+  condSesameOil:     'https://images.unsplash.com/photo-1682335926245-2a6d54e07029?w=400&h=400&fit=crop&auto=format',
+  condMirin:         'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400&h=400&fit=crop&auto=format',
+  condRiceVinegar:   'https://images.unsplash.com/photo-1675976475751-ccf301834a00?w=400&h=400&fit=crop&auto=format',
+  condChiliOil:      'https://images.unsplash.com/photo-1599987662084-97832741bfa2?w=400&h=400&fit=crop&auto=format',
+  ingBonitoFlakes:   'https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=400&h=400&fit=crop&auto=format',
+  ingOctopus:        'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400&h=400&fit=crop&auto=format',
+  condTakoyakiSauce: 'https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=400&h=400&fit=crop&auto=format',
+  ingDashiStock:     'https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=400&h=400&fit=crop&auto=format',
 }
 
-import type { ShopItem } from './types'
+import type { ShopItem, ShopCategory, CartItem } from './types'
+
+// ─── Dish Shop Items — generated from COUNTRIES (all dishes with detail pages) ───
+const MEAL_KEYS: MealKey[] = ['breakfast', 'lunch', 'dinner', 'dessert', 'snack', 'streetFood']
+const MEAL_TYPE_LABEL: Record<MealKey, string> = {
+  breakfast: '早餐', lunch: '午餐', dinner: '晚餐', dessert: '甜点', snack: '小食', streetFood: '街食',
+}
+
+const DISH_ITEMS: ShopItem[] = (Object.keys(COUNTRIES) as Country[]).flatMap((countryKey) => {
+  const c = COUNTRIES[countryKey]
+  return MEAL_KEYS.map((mealKey): ShopItem => {
+    const meal = c[mealKey]
+    return {
+      id: `dish-${countryKey}-${mealKey}`,
+      name: meal.en,
+      cn: meal.cn,
+      price: meal.price,
+      unit: '份',
+      img: meal.img,
+      category: 'dish',
+      country: countryKey,
+      description: meal.story,
+      stock: 50,
+      mealKey,
+      tags: [MEAL_TYPE_LABEL[mealKey]],
+    }
+  })
+})
 
 export const SHOP_ITEMS: ShopItem[] = [
-  // Meal Kits
-  { id: 'kit-italy', name: 'Pasta al Ragù Kit', cn: '意式肉酱意面套装', price: 89, unit: '份', img: SHOP_IMGS.kitItalyPasta, category: 'mealKit', country: 'italy', description: '经典博洛尼亚肉酱意面套装，含手工意面、意式肉酱和帕玛森芝士', stock: 50 },
-  { id: 'kit-japan', name: 'Tonkotsu Ramen Kit', cn: '豚骨拉面套装', price: 98, unit: '份', img: SHOP_IMGS.kitJapanRamen, category: 'mealKit', country: 'japan', description: '浓白豚骨汤底搭配手工拉面，含叉烧肉、溏心蛋和木耳', stock: 40 },
-  { id: 'kit-mexico', name: 'Birria Tacos Kit', cn: '墨西哥牛肉卷饼套装', price: 108, unit: '份', img: SHOP_IMGS.kitMexicoTacos, category: 'mealKit', country: 'mexico', description: '慢炖牛肉配玉米饼，含莎莎酱、酸奶油和青柠', stock: 35 },
-  { id: 'kit-france', name: 'Crêpe Suzette Kit', cn: '法式可丽饼套装', price: 78, unit: '份', img: SHOP_IMGS.kitFranceCrepe, category: 'mealKit', country: 'france', description: '黄油可丽饼配橙花香草酱，含鲜奶油和焦糖', stock: 30 },
-  { id: 'kit-thailand', name: 'Pad Thai Kit', cn: '泰式炒河粉套装', price: 68, unit: '份', img: SHOP_IMGS.kitThailandPadThai, category: 'mealKit', country: 'thailand', description: '经典泰式炒河粉，含豆芽、花生碎和罗望子酱', stock: 45 },
-  { id: 'kit-china', name: 'Mapo Tofu Kit', cn: '麻婆豆腐套装', price: 58, unit: '份', img: SHOP_IMGS.kitChinaMapoTofu, category: 'mealKit', country: 'china', description: '四川麻婆豆腐套装，含嫩豆腐、豆瓣酱和花椒', stock: 60 },
-  // Vegetables
-  { id: 'veg-tomato', name: 'Heirloom Tomato', cn: '有机番茄', price: 12, unit: '500g', img: SHOP_IMGS.vegTomato, category: 'vegetable', description: '意大利进口传家宝番茄，口感浓郁多汁', stock: 200 },
-  { id: 'veg-basil', name: 'Fresh Basil', cn: '新鲜罗勒', price: 8, unit: '把', img: SHOP_IMGS.vegBasil, category: 'vegetable', description: '现摘意大利罗勒，香气浓郁', stock: 150 },
-  { id: 'veg-mushroom', name: 'Shiitake Mushroom', cn: '香菇', price: 15, unit: '200g', img: SHOP_IMGS.vegMushroom, category: 'vegetable', description: '日本原木香菇，肉质厚实', stock: 180 },
-  { id: 'veg-lemongrass', name: 'Lemongrass', cn: '香茅', price: 10, unit: '把', img: SHOP_IMGS.vegLemongrass, category: 'vegetable', description: '泰国香茅， lemony 香气', stock: 120 },
-  { id: 'veg-chili', name: 'Red Chili', cn: '红辣椒', price: 6, unit: '100g', img: SHOP_IMGS.vegChili, category: 'vegetable', description: '新鲜红辣椒，辣度适中', stock: 160 },
-  { id: 'veg-cilantro', name: 'Cilantro', cn: '香菜', price: 5, unit: '把', img: SHOP_IMGS.vegCilantro, category: 'vegetable', description: '新鲜香菜，香气清新', stock: 140 },
-  // Ingredients & Sauces
-  { id: 'ing-olive-oil', name: 'Extra Virgin Olive Oil', cn: '特级初榨橄榄油', price: 68, unit: '500ml', img: SHOP_IMGS.ingOliveOil, category: 'sauce', description: '意大利托斯卡纳特级初榨橄榄油', stock: 80 },
-  { id: 'ing-soy-sauce', name: 'Artisan Soy Sauce', cn: '手工酱油', price: 45, unit: '500ml', img: SHOP_IMGS.ingSoySauce, category: 'sauce', description: '日本手工酿造酱油，鲜甜醇厚', stock: 100 },
-  { id: 'ing-saffron', name: 'Saffron Threads', cn: '藏红花', price: 88, unit: '1g', img: SHOP_IMGS.ingSaffron, category: 'ingredient', description: '伊朗顶级藏红花，色泽鲜艳', stock: 50 },
-  { id: 'ing-truffle', name: 'Black Truffle', cn: '黑松露', price: 168, unit: '50g', img: SHOP_IMGS.ingTruffle, category: 'ingredient', description: '法国佩里戈尔黑松露，香气浓郁', stock: 20 },
-  { id: 'ing-wasabi', name: 'Fresh Wasabi', cn: '新鲜山葵', price: 58, unit: '100g', img: SHOP_IMGS.ingWasabi, category: 'ingredient', description: '日本静冈新鲜山葵，现磨最佳', stock: 40 },
-  { id: 'ing-coconut-milk', name: 'Coconut Milk', cn: '椰浆', price: 18, unit: '400ml', img: SHOP_IMGS.ingCoconutMilk, category: 'sauce', description: '泰国原装进口椰浆，香浓顺滑', stock: 120 },
+  ...DISH_ITEMS,
+  // ── Italy ──
+  { id: 'ing-pasta', name: 'Fresh Pasta', cn: '手工意面', price: 28, unit: '300g', img: SHOP_IMGS.ingPasta, category: 'ingredient', country: 'italy', description: '意大利手工意面，新鲜制作', stock: 80, sourceMeal: 'Cacio e Pepe', tags: ['招牌'] },
+  { id: 'ing-parmesan', name: 'Parmigiano Reggiano', cn: '帕玛森芝士', price: 88, unit: '200g', img: SHOP_IMGS.ingParmesan, category: 'ingredient', country: 'italy', description: '意大利PDO认证帕玛森芝士', stock: 50, sourceMeal: 'Cacio e Pepe', tags: ['精品'] },
+  { id: 'ing-tomato', name: 'Heirloom Tomato', cn: '有机番茄', price: 12, unit: '500g', img: SHOP_IMGS.ingTomato, category: 'ingredient', country: 'italy', description: '意大利传家宝番茄', stock: 200, sourceMeal: 'Pomodoro', tags: ['新鲜'] },
+  { id: 'ing-basil', name: 'Fresh Basil', cn: '新鲜罗勒', price: 8, unit: '1把', img: SHOP_IMGS.ingBasil, category: 'ingredient', country: 'italy', description: '意大利罗勒', stock: 150, sourceMeal: 'Pomodoro', tags: ['新鲜'] },
+  { id: 'ing-beef', name: 'Wagyu Beef', cn: '雪花牛肉片', price: 128, unit: '200g', img: SHOP_IMGS.ingBeef, category: 'ingredient', country: 'italy', description: 'A5级雪花牛肉，薄切', stock: 40, sourceMeal: 'Bistecca', tags: ['顶级'] },
+  { id: 'ing-mozzarella', name: 'Fresh Mozzarella', cn: '新鲜马苏里拉', price: 48, unit: '150g', img: SHOP_IMGS.ingMozzarella, category: 'ingredient', country: 'italy', description: '意大利水牛马苏里拉', stock: 60, sourceMeal: 'Margherita', tags: ['精品'] },
+  { id: 'ing-prosciutto', name: 'Prosciutto', cn: '帕尔马火腿', price: 98, unit: '100g', img: SHOP_IMGS.ingProsciutto, category: 'ingredient', country: 'italy', description: '意大利帕尔马火腿，24个月熟成', stock: 35, sourceMeal: 'Antipasto', tags: ['顶级'] },
+  { id: 'ing-sun-dried-tomato', name: 'Sun-Dried Tomatoes', cn: '日晒番茄干', price: 35, unit: '200g', img: SHOP_IMGS.ingSunDriedTomato, category: 'ingredient', country: 'italy', description: '西西里日晒番茄干', stock: 55, tags: ['精品'] },
+  { id: 'ing-capers', name: 'Capers', cn: '刺山柑', price: 42, unit: '100g', img: SHOP_IMGS.ingCapers, category: 'ingredient', country: 'italy', description: '地中海刺山柑，酸香浓郁', stock: 40, tags: ['特色'] },
+
+  // ── Japan ──
+  { id: 'ing-ramen', name: 'Ramen Noodles', cn: '手工拉面', price: 35, unit: '2人份', img: SHOP_IMGS.ingRamen, category: 'ingredient', country: 'japan', description: '日本豚骨拉面专用面条', stock: 100, sourceMeal: 'Tonkotsu Ramen', tags: ['经典'] },
+  { id: 'ing-chashu', name: 'Chashu Pork', cn: '叉烧肉', price: 58, unit: '200g', img: SHOP_IMGS.ingChashu, category: 'ingredient', country: 'japan', description: '日式叉烧，慢炖入味', stock: 60, sourceMeal: 'Tonkotsu Ramen', tags: [] },
+  { id: 'ing-mushroom', name: 'Shiitake Mushroom', cn: '香菇', price: 15, unit: '200g', img: SHOP_IMGS.ingMushroom, category: 'ingredient', country: 'japan', description: '日本原木香菇', stock: 180, sourceMeal: 'Tonkotsu Ramen', tags: [] },
+  { id: 'ing-salmon', name: 'Sockeye Salmon', cn: '三文鱼', price: 88, unit: '300g', img: SHOP_IMGS.ingSalmon, category: 'ingredient', country: 'japan', description: '挪威三文鱼刺身级', stock: 40, sourceMeal: 'Sashimi', tags: ['精品'] },
+  { id: 'ing-tuna', name: 'Bluefin Tuna', cn: '蓝鳍金枪鱼', price: 188, unit: '200g', img: SHOP_IMGS.ingTuna, category: 'ingredient', country: 'japan', description: '蓝鳍金枪鱼赤身', stock: 20, sourceMeal: 'Sashimi', tags: ['顶级'] },
+  { id: 'ing-rice', name: 'Koshihikari Rice', cn: '越光米', price: 58, unit: '2kg', img: SHOP_IMGS.ingRice, category: 'ingredient', country: 'japan', description: '日本新潟越光米', stock: 80, sourceMeal: 'Sushi', tags: ['精品'] },
+  { id: 'ing-nori', name: 'Nori Sheets', cn: '海苔片', price: 28, unit: '10张', img: SHOP_IMGS.ingNori, category: 'ingredient', country: 'japan', description: '日本有明海苔', stock: 90, sourceMeal: 'Sushi', tags: ['精品'] },
+  { id: 'ing-miso', name: 'White Miso Paste', cn: '白味噌', price: 32, unit: '500g', img: SHOP_IMGS.ingMiso, category: 'ingredient', country: 'japan', description: '日本信州白味噌', stock: 70, sourceMeal: 'Tonkotsu Ramen', tags: ['特色'] },
+  { id: 'ing-bonito-flakes', name: 'Bonito Flakes', cn: '柴鱼片', price: 35, unit: '1袋', img: SHOP_IMGS.ingBonitoFlakes, category: 'ingredient', country: 'japan', description: '日本进口柴鱼片，章鱼烧必备', stock: 80, sourceMeal: 'Takoyaki', tags: ['经典'] },
+  { id: 'ing-octopus', name: 'Fresh Octopus', cn: '鲜活章鱼', price: 88, unit: '500g', img: SHOP_IMGS.ingOctopus, category: 'ingredient', country: 'japan', description: '日本海域鲜活章鱼', stock: 30, sourceMeal: 'Takoyaki', tags: ['新鲜'] },
+  { id: 'ing-dashi-stock', name: 'Dashi Stock', cn: '出汁', price: 28, unit: '500ml', img: SHOP_IMGS.ingDashiStock, category: 'ingredient', country: 'japan', description: '日式高汤，味噌汤基础', stock: 90, sourceMeal: 'Edamame Miso Soup', tags: ['经典'] },
+  { id: 'ing-takoyaki-flour-mix', name: 'Takoyaki Flour Mix', cn: '章鱼烧粉', price: 25, unit: '500g', img: '', category: 'ingredient', country: 'japan', description: '手工调配章鱼烧粉（不可单独购买）', stock: 0, sourceMeal: 'Takoyaki', tags: ['不可购买'], isNotPurchasable: true },
+
+  // ── Mexico ──
+  { id: 'ing-corn-tortilla', name: 'Corn Tortillas', cn: '玉米饼', price: 22, unit: '12张', img: SHOP_IMGS.ingCornTortilla, category: 'ingredient', country: 'mexico', description: '墨西哥传统玉米饼', stock: 90, sourceMeal: 'Birria Tacos', tags: [] },
+  { id: 'ing-avocado', name: 'Hass Avocado', cn: '鳄梨', price: 15, unit: '2个', img: SHOP_IMGS.ingAvocado, category: 'ingredient', country: 'mexico', description: '墨西哥Hass鳄梨，熟透', stock: 120, sourceMeal: 'Guacamole', tags: ['特色'] },
+  { id: 'ing-beef-mex', name: 'Beef Brisket', cn: '牛胸肉', price: 68, unit: '500g', img: SHOP_IMGS.ingBrisket, category: 'ingredient', country: 'mexico', description: '慢炖牛胸肉，适合Birria', stock: 50, sourceMeal: 'Birria Tacos', tags: [] },
+  { id: 'ing-lime', name: 'Key Lime', cn: '青柠', price: 18, unit: '500g', img: SHOP_IMGS.ingLime, category: 'ingredient', country: 'mexico', description: '墨西哥Key青柠', stock: 100, sourceMeal: 'Guacamole', tags: ['新鲜'] },
+  { id: 'ing-cilantro', name: 'Fresh Cilantro', cn: '香菜', price: 6, unit: '1把', img: SHOP_IMGS.ingCilantro, category: 'ingredient', country: 'mexico', description: '新鲜香菜', stock: 200, sourceMeal: 'Guacamole', tags: ['新鲜'] },
+
+  // ── France ──
+  { id: 'ing-flour', name: 'All-Butter Flour', cn: '法式面粉', price: 18, unit: '500g', img: SHOP_IMGS.ingFlour, category: 'ingredient', country: 'france', description: '法国T65型面粉，适合甜点', stock: 70, sourceMeal: 'Crêpe Suzette', tags: [] },
+  { id: 'ing-butter', name: 'Normandy Butter', cn: '诺曼底黄油', price: 45, unit: '250g', img: SHOP_IMGS.ingButter, category: 'ingredient', country: 'france', description: '法国诺曼底产黄油，奶香浓郁', stock: 55, sourceMeal: 'Crêpe Suzette', tags: ['精品'] },
+  { id: 'ing-egg', name: 'Farm Eggs', cn: '农场鸡蛋', price: 18, unit: '10个', img: SHOP_IMGS.ingEgg, category: 'ingredient', country: 'france', description: '散养农场鸡蛋', stock: 160, sourceMeal: 'Crêpe Suzette', tags: ['新鲜'] },
+  { id: 'ing-cream', name: 'Heavy Cream', cn: '鲜奶油', price: 35, unit: '500ml', img: SHOP_IMGS.ingCream, category: 'ingredient', country: 'france', description: '法国鲜奶油', stock: 60, sourceMeal: 'Crêpe Suzette', tags: [] },
+  { id: 'ing-cheese', name: 'Comté Cheese', cn: '孔泰芝士', price: 128, unit: '300g', img: SHOP_IMGS.ingComte, category: 'ingredient', country: 'france', description: '法国孔泰芝士，12个月熟成', stock: 30, sourceMeal: 'Cheese Plate', tags: ['精品'] },
+
+  // ── Thailand ──
+  { id: 'ing-rice-noodle', name: 'Rice Noodles', cn: '米粉', price: 16, unit: '400g', img: SHOP_IMGS.ingRiceNoodle, category: 'ingredient', country: 'thailand', description: '泰国米粉，爽滑劲道', stock: 110, sourceMeal: 'Pad Thai', tags: [] },
+  { id: 'ing-chicken', name: 'Chicken Thigh', cn: '鸡腿肉', price: 32, unit: '400g', img: SHOP_IMGS.ingChicken, category: 'ingredient', country: 'thailand', description: '去骨鸡腿肉', stock: 95, sourceMeal: 'Tom Yum', tags: [] },
+  { id: 'ing-shrimp', name: 'River Prawns', cn: '河虾', price: 68, unit: '300g', img: SHOP_IMGS.ingShrimp, category: 'ingredient', country: 'thailand', description: '泰国河虾，鲜活', stock: 45, sourceMeal: 'Pad Thai', tags: ['精品'] },
+  { id: 'ing-galangal', name: 'Galangal Root', cn: '南姜', price: 22, unit: '200g', img: SHOP_IMGS.ingGalangal, category: 'ingredient', country: 'thailand', description: '泰国南姜，Tom Yum必备', stock: 80, sourceMeal: 'Tom Yum', tags: [] },
+  { id: 'ing-lemongrass', name: 'Lemongrass', cn: '香茅', price: 15, unit: '3根', img: SHOP_IMGS.ingLemongrass, category: 'ingredient', country: 'thailand', description: '泰国香茅', stock: 120, sourceMeal: 'Tom Yum', tags: ['新鲜'] },
+
+  // ── China ──
+  { id: 'ing-tofu', name: 'Silken Tofu', cn: '嫩豆腐', price: 8, unit: '1块', img: SHOP_IMGS.ingTofu, category: 'ingredient', country: 'china', description: '四川嫩滑豆腐', stock: 150, sourceMeal: 'Mapo Tofu', tags: [] },
+  { id: 'ing-pork-mince', name: 'Ground Pork', cn: '猪肉末', price: 28, unit: '300g', img: SHOP_IMGS.ingPorkMince, category: 'ingredient', country: 'china', description: '三分肥七分瘦猪肉末', stock: 85, sourceMeal: 'Mapo Tofu', tags: [] },
+  { id: 'ing-scallion', name: 'Scallion', cn: '葱', price: 5, unit: '1把', img: SHOP_IMGS.ingScallion, category: 'ingredient', country: 'china', description: '新鲜大葱', stock: 300, sourceMeal: 'Mapo Tofu', tags: ['新鲜'] },
+  { id: 'ing-chili', name: 'Sichuan Chili', cn: '四川辣椒', price: 12, unit: '100g', img: SHOP_IMGS.ingChili, category: 'ingredient', country: 'china', description: '四川干辣椒', stock: 180, sourceMeal: 'Mapo Tofu', tags: ['特色'] },
+  { id: 'ing-gluten', name: 'Vital Wheat Gluten', cn: '面筋', price: 16, unit: '200g', img: SHOP_IMGS.ingGluten, category: 'ingredient', country: 'china', description: '小麦面筋，手工凉皮用', stock: 90, sourceMeal: 'Cold Noodles', tags: [] },
+  { id: 'ing-garlic', name: 'Garlic Bulb', cn: '大蒜', price: 8, unit: '3头', img: SHOP_IMGS.ingGarlic, category: 'ingredient', country: 'china', description: '山东紫皮大蒜', stock: 250, tags: ['新鲜'] },
+  { id: 'ing-onion', name: 'Yellow Onion', cn: '洋葱', price: 6, unit: '500g', img: SHOP_IMGS.ingOnion, category: 'ingredient', country: 'china', description: '甘肃黄洋葱', stock: 280, tags: ['新鲜'] },
+  { id: 'ing-carrot', name: 'Organic Carrot', cn: '有机胡萝卜', price: 7, unit: '500g', img: SHOP_IMGS.ingCarrot, category: 'ingredient', country: 'china', description: '内蒙古有机胡萝卜', stock: 220, tags: ['新鲜'] },
+  { id: 'ing-ginger', name: 'Fresh Ginger', cn: '生姜', price: 10, unit: '200g', img: SHOP_IMGS.ingGinger, category: 'ingredient', country: 'china', description: '山东大姜', stock: 180, tags: ['新鲜'] },
+
+  // ── Condiments (global) ──
+  { id: 'cond-olive-oil', name: 'Tuscan Olive Oil', cn: '托斯卡纳橄榄油', price: 68, unit: '500ml', img: SHOP_IMGS.condOliveOil, category: 'condiment', country: 'italy', description: '意大利托斯卡纳特级初榨橄榄油', stock: 80, tags: ['精品'] },
+  { id: 'cond-soy-sauce', name: 'Artisan Soy Sauce', cn: '手工酱油', price: 45, unit: '500ml', img: SHOP_IMGS.condSoySauce, category: 'condiment', country: 'japan', description: '日本手工酿造酱油', stock: 100, tags: ['经典'] },
+  { id: 'cond-saffron', name: 'Saffron Threads', cn: '藏红花', price: 88, unit: '1g', img: SHOP_IMGS.condSaffron, category: 'condiment', description: '伊朗顶级藏红花', stock: 50, tags: ['稀有'] },
+  { id: 'cond-truffle', name: 'Black Truffle', cn: '黑松露', price: 168, unit: '50g', img: SHOP_IMGS.condTruffle, category: 'condiment', country: 'france', description: '法国佩里戈尔黑松露', stock: 20, tags: ['顶级'] },
+  { id: 'cond-wasabi', name: 'Fresh Wasabi', cn: '新鲜山葵', price: 58, unit: '100g', img: SHOP_IMGS.condWasabi, category: 'condiment', country: 'japan', description: '日本静冈新鲜山葵', stock: 40, tags: ['特色'] },
+  { id: 'cond-coconut-milk', name: 'Coconut Milk', cn: '椰浆', price: 18, unit: '400ml', img: SHOP_IMGS.condCoconutMilk, category: 'condiment', country: 'thailand', description: '泰国原装进口椰浆', stock: 120, tags: [] },
+  { id: 'cond-balsamic', name: 'Balsamic Vinegar', cn: '黑醋', price: 78, unit: '250ml', img: SHOP_IMGS.condBalsamic, category: 'condiment', country: 'italy', description: '意大利摩德纳黑醋', stock: 45, tags: ['精品'] },
+  { id: 'cond-salsa', name: 'Salsa Verde', cn: '莎莎酱', price: 32, unit: '200ml', img: SHOP_IMGS.condSalsa, category: 'condiment', country: 'mexico', description: '墨西哥青莎莎酱', stock: 70, tags: ['特色'] },
+  { id: 'cond-mustard', name: 'Dijon Mustard', cn: '第戎芥末', price: 42, unit: '250g', img: SHOP_IMGS.condMustard, category: 'condiment', country: 'france', description: '法国第戎芥末', stock: 55, tags: ['经典'] },
+  { id: 'cond-fish-sauce', name: 'Fish Sauce', cn: '鱼露', price: 28, unit: '500ml', img: SHOP_IMGS.condFishSauce, category: 'condiment', country: 'thailand', description: '泰国鱼露，鲜味十足', stock: 90, tags: [] },
+  { id: 'cond-douban', name: 'Doubanjiang', cn: '豆瓣酱', price: 38, unit: '500g', img: SHOP_IMGS.condDouban, category: 'condiment', country: 'china', description: '四川郫县豆瓣酱', stock: 75, tags: ['招牌'] },
+  { id: 'cond-black-pepper', name: 'Tellicherry Pepper', cn: '黑胡椒', price: 25, unit: '100g', img: SHOP_IMGS.condBlackPepper, category: 'condiment', description: '印度泰利切里黑胡椒', stock: 110, tags: [] },
+  { id: 'cond-sea-salt', name: 'Sea Salt', cn: '海盐', price: 18, unit: '200g', img: SHOP_IMGS.condSeaSalt, category: 'condiment', description: '法国布列塔尼海盐', stock: 130, tags: ['精品'] },
+  { id: 'cond-paprika', name: 'Smoked Paprika', cn: '烟熏甜椒粉', price: 32, unit: '100g', img: SHOP_IMGS.condPaprika, category: 'condiment', country: 'mexico', description: '西班牙烟熏甜椒粉', stock: 65, tags: ['特色'] },
+  { id: 'cond-chili-oil', name: 'Chili Oil', cn: '辣椒油', price: 28, unit: '300ml', img: SHOP_IMGS.condChiliOil, category: 'condiment', country: 'china', description: '四川红油辣椒油', stock: 95, tags: ['招牌'] },
+  { id: 'cond-mirin', name: 'Mirin', cn: '味醂', price: 35, unit: '500ml', img: SHOP_IMGS.condMirin, category: 'condiment', country: 'japan', description: '日本味醂，甜米酒', stock: 70, tags: ['经典'] },
+  { id: 'cond-takoyaki-sauce', name: 'Takoyaki Sauce', cn: '章鱼烧酱', price: 28, unit: '500ml', img: SHOP_IMGS.condTakoyakiSauce, category: 'condiment', country: 'japan', description: '日式章鱼烧酱，甜咸适中', stock: 60, sourceMeal: 'Takoyaki', tags: ['特色'] },
+  { id: 'cond-rice-vinegar', name: 'Rice Vinegar', cn: '米酒醋', price: 22, unit: '500ml', img: SHOP_IMGS.condRiceVinegar, category: 'condiment', country: 'china', description: '镇江香醋', stock: 110, tags: [] },
+  { id: 'cond-oyster-sauce', name: 'Oyster Sauce', cn: '蚝油', price: 32, unit: '500ml', img: SHOP_IMGS.condOysterSauce, category: 'condiment', country: 'china', description: '广东蚝油，鲜味浓郁', stock: 85, tags: ['经典'] },
+  { id: 'cond-sesame-oil', name: 'Sesame Oil', cn: '香油', price: 28, unit: '250ml', img: SHOP_IMGS.condSesameOil, category: 'condiment', country: 'china', description: '小磨香油，香气浓郁', stock: 100, tags: ['精品'] },
 ]
 
 export const SHOP_COUNTRIES = [
-  { id: 'all', name: 'All', cn: '全部', img: null },
-  { id: 'italy', name: 'Italy', cn: '意大利', img: SHOP_IMGS.landmarkItaly, flag: '🇮🇹' },
-  { id: 'japan', name: 'Japan', cn: '日本', img: SHOP_IMGS.landmarkJapan, flag: '🇯🇵' },
-  { id: 'mexico', name: 'Mexico', cn: '墨西哥', img: SHOP_IMGS.landmarkMexico, flag: '🇲🇽' },
-  { id: 'france', name: 'France', cn: '法国', img: SHOP_IMGS.landmarkFrance, flag: '🇫🇷' },
-  { id: 'thailand', name: 'Thailand', cn: '泰国', img: SHOP_IMGS.landmarkThailand, flag: '🇹🇭' },
-  { id: 'china', name: 'China', cn: '中国', img: SHOP_IMGS.landmarkChina, flag: '🇨🇳' },
+  { id: 'all', name: 'All', cn: '全部', flag: '' },
+  { id: 'italy', name: 'Italy', cn: '意大利', flag: '🇮🇹' },
+  { id: 'japan', name: 'Japan', cn: '日本', flag: '🇯🇵' },
+  { id: 'mexico', name: 'Mexico', cn: '墨西哥', flag: '🇲🇽' },
+  { id: 'france', name: 'France', cn: '法国', flag: '🇫🇷' },
+  { id: 'thailand', name: 'Thailand', cn: '泰国', flag: '🇹🇭' },
+  { id: 'china', name: 'China', cn: '中国', flag: '🇨🇳' },
 ]
 
 export type { Screen, NavScreen, Country, MealKey, Meal, CountryData, HeroData, IconProps, ShopItem, ShopCategory, CartItem }

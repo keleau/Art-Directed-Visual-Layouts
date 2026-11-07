@@ -18,6 +18,9 @@ export {
   IconBack,
   IconX,
   IconClockHistory,
+  IconBag,
+  IconMinus,
+  IconShoppingCart,
 } from './icons'
 export { Reveal } from './Reveal'
 export { Parallax } from './Parallax'

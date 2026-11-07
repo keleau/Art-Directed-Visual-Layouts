@@ -157,12 +157,6 @@ export const IconMinus = (p: IconProps) => (
   </svg>
 )
 
-export const IconPlus = (p: IconProps) => (
-  <svg {...baseIconProps(p)}>
-    <path d="M12 5v14M5 12h14" />
-  </svg>
-)
-
 export const IconShoppingCart = (p: IconProps) => (
   <svg {...baseIconProps(p)}>
     <circle cx="9" cy="20" r="1.5" />
