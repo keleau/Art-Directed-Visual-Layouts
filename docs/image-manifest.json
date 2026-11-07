@@ -1,0 +1,345 @@
+[
+  {
+    "key": "landmarkRome",
+    "kind": "main",
+    "file": "images/scenes/landmarkRome.jpg",
+    "source": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "landmarkChina",
+    "kind": "main",
+    "file": "images/scenes/landmarkChina.jpg",
+    "source": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "landmarkBangkok",
+    "kind": "main",
+    "file": "images/scenes/landmarkBangkok.jpg",
+    "source": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "croissant",
+    "kind": "main",
+    "file": "images/scenes/croissant.jpg",
+    "source": "AI-generated with Qoder ImageGen",
+    "status": "generated"
+  },
+  {
+    "key": "rome",
+    "kind": "main",
+    "file": "images/scenes/rome.jpg",
+    "source": "https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "chili",
+    "kind": "main",
+    "file": "images/scenes/chili.jpg",
+    "source": "https://images.unsplash.com/photo-1592201426550-83c4be24a0a7?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "vegetables",
+    "kind": "main",
+    "file": "images/scenes/vegetables.jpg",
+    "source": "https://images.unsplash.com/photo-1553787434-45e1d245bfbb?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "landmarkMexico",
+    "kind": "main",
+    "file": "images/scenes/landmarkMexico.jpg",
+    "source": "https://images.pexels.com/photos/19231570/pexels-photo-19231570.jpeg?auto=compress&cs=tinysrgb&w=900&h=900&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "market",
+    "kind": "main",
+    "file": "images/scenes/market.jpg",
+    "source": "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "pastaHand",
+    "kind": "main",
+    "file": "images/scenes/pastaHand.jpg",
+    "source": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "spices",
+    "kind": "main",
+    "file": "images/scenes/spices.jpg",
+    "source": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "japanStreet",
+    "kind": "main",
+    "file": "images/scenes/japanStreet.jpg",
+    "source": "https://images.unsplash.com/photo-1548148870-adbf75452257?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "steakFrites",
+    "kind": "main",
+    "file": "images/food/steakFrites.jpg",
+    "source": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "nicoise",
+    "kind": "main",
+    "file": "images/food/nicoise.jpg",
+    "source": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "cremeBrulee",
+    "kind": "main",
+    "file": "images/food/cremeBrulee.jpg",
+    "source": "AI-generated with Qoder ImageGen",
+    "status": "generated"
+  },
+  {
+    "key": "greenCurry",
+    "kind": "main",
+    "file": "images/food/greenCurry.jpg",
+    "source": "AI-generated with Qoder ImageGen",
+    "status": "generated"
+  },
+  {
+    "key": "thaiStreet",
+    "kind": "main",
+    "file": "images/scenes/thaiStreet.jpg",
+    "source": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "mangoSticky",
+    "kind": "main",
+    "file": "images/food/mangoSticky.jpg",
+    "source": "https://images.unsplash.com/photo-1705056508219-0aa0ceb16820?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "mexicoPlate",
+    "kind": "main",
+    "file": "images/food/mexicoPlate.jpg",
+    "source": "https://images.pexels.com/photos/29530030/pexels-photo-29530030.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "eiffel",
+    "kind": "main",
+    "file": "images/scenes/eiffel.jpg",
+    "source": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "tamagoGohan",
+    "kind": "main",
+    "file": "images/food/tamagoGohan.jpg",
+    "source": "AI-generated with Qoder ImageGen",
+    "status": "generated"
+  },
+  {
+    "key": "sukiyaki",
+    "kind": "main",
+    "file": "images/food/sukiyaki.jpg",
+    "source": "AI-generated with Qoder ImageGen",
+    "status": "generated"
+  },
+  {
+    "key": "bistecca",
+    "kind": "main",
+    "file": "images/food/bistecca.jpg",
+    "source": "https://images.unsplash.com/photo-1558030006-450675393462?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "huevos",
+    "kind": "main",
+    "file": "images/food/huevos.jpg",
+    "source": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "tiramisuImg",
+    "kind": "main",
+    "file": "images/food/tiramisuImg.jpg",
+    "source": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "ramenSea",
+    "kind": "main",
+    "file": "images/food/ramenSea.jpg",
+    "source": "https://images.pexels.com/photos/37322364/pexels-photo-37322364.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "kungpao",
+    "kind": "main",
+    "file": "images/food/kungpao.jpg",
+    "source": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "tomatoes",
+    "kind": "main",
+    "file": "images/scenes/tomatoes.jpg",
+    "source": "https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=900&auto=format&q=70&fm=jpg",
+    "status": "failed"
+  },
+  {
+    "key": "xiaolongbao",
+    "kind": "main",
+    "file": "images/food/xiaolongbao.jpg",
+    "source": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "cookingHero",
+    "kind": "main",
+    "file": "images/scenes/cookingHero.jpg",
+    "source": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&auto=format&q=70&fm=jpg",
+    "status": "downloaded"
+  },
+  {
+    "key": "pastaPlate",
+    "kind": "main",
+    "file": "images/food/pastaPlate.jpg",
+    "source": "https://images.pexels.com/photos/34797458/pexels-photo-34797458.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "thai",
+    "kind": "main",
+    "file": "images/scenes/thai.jpg",
+    "source": "https://images.pexels.com/photos/10756648/pexels-photo-10756648.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "padThai",
+    "kind": "main",
+    "file": "images/food/padThai.jpg",
+    "source": "https://images.pexels.com/photos/34723310/pexels-photo-34723310.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "pekingDuck",
+    "kind": "main",
+    "file": "images/food/pekingDuck.jpg",
+    "source": "https://images.pexels.com/photos/5848607/pexels-photo-5848607.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "churros",
+    "kind": "main",
+    "file": "images/food/churros.jpg",
+    "source": "https://images.pexels.com/photos/4128504/pexels-photo-4128504.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "tangyuan",
+    "kind": "main",
+    "file": "images/food/tangyuan.jpg",
+    "source": "https://images.pexels.com/photos/1938266/pexels-photo-1938266.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "birriaTacos",
+    "kind": "main",
+    "file": "images/food/birriaTacos.jpg",
+    "source": "https://images.pexels.com/photos/31632714/pexels-photo-31632714.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "burrataOlive",
+    "kind": "main",
+    "file": "images/food/burrataOlive.jpg",
+    "source": "https://images.pexels.com/photos/28841119/pexels-photo-28841119.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "edamameMiso",
+    "kind": "main",
+    "file": "images/food/edamameMiso.jpg",
+    "source": "https://images.pexels.com/photos/15881377/pexels-photo-15881377.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "takoyaki",
+    "kind": "main",
+    "file": "images/food/takoyaki.jpg",
+    "source": "https://images.pexels.com/photos/25050466/pexels-photo-25050466.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "guacamole",
+    "kind": "main",
+    "file": "images/food/guacamole.jpg",
+    "source": "https://images.pexels.com/photos/25244620/pexels-photo-25244620.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "crepeSuzette",
+    "kind": "main",
+    "file": "images/food/crepeSuzette.jpg",
+    "source": "https://images.pexels.com/photos/4725646/pexels-photo-4725646.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "elote",
+    "kind": "main",
+    "file": "images/food/elote.jpg",
+    "source": "https://images.pexels.com/photos/17582268/pexels-photo-17582268.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "centuryEggTofu",
+    "kind": "main",
+    "file": "images/food/centuryEggTofu.jpg",
+    "source": "https://images.pexels.com/photos/5266094/pexels-photo-5266094.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "fromageBlanc",
+    "kind": "main",
+    "file": "images/food/fromageBlanc.jpg",
+    "source": "https://images.pexels.com/photos/6004726/pexels-photo-6004726.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "khanomJeen",
+    "kind": "main",
+    "file": "images/food/khanomJeen.jpg",
+    "source": "https://images.pexels.com/photos/7413153/pexels-photo-7413153.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "khanomBueang",
+    "kind": "main",
+    "file": "images/food/khanomBueang.jpg",
+    "source": "https://images.pexels.com/photos/25430628/pexels-photo-25430628.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "pizzaAlTaglio",
+    "kind": "main",
+    "file": "images/food/pizzaAlTaglio.jpg",
+    "source": "https://images.pexels.com/photos/33987719/pexels-photo-33987719.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  },
+  {
+    "key": "jianbing",
+    "kind": "main",
+    "file": "images/food/jianbing.jpg",
+    "source": "https://images.pexels.com/photos/36034214/pexels-photo-36034214.jpeg?auto=compress&cs=tinysrgb&w=900&h=1500&fit=crop",
+    "status": "downloaded"
+  }
+]

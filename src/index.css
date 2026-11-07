@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Caveat:wght@400;600&display=swap');
+@import './fonts.css';
 @import 'tailwindcss';
 
-/* stylelint-disable-next-line at-rule-no-unknown */
-/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-hand: 'Caveat', cursive;
+  --font-display: 'Playfair Display', 'Songti SC', 'STSong', 'Noto Serif SC', 'SimSun', Georgia, serif;
+  --font-body: 'DM Sans', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Kaiti SC', 'STKaiti', 'KaiTi', cursive;
 }
 
 :root {
@@ -30,47 +28,19 @@
   --c-muted: #8B7355;
   --c-paper: #F6EFE2;
 
-  /* ─── Time-phase gradient stops (low saturation) ───────── */
-  /* Morning  早餐 */
+  /* Time-phase colors */
   --c-morning-1: #F3ECE0;
   --c-morning-2: #E8DEC8;
   --c-morning-3: #C9A84C;
-
-  /* Afternoon 午餐 */
   --c-afternoon-1: #EBE3D3;
   --c-afternoon-2: #D9C7A8;
   --c-afternoon-3: #C9A84C;
-
-  /* Dusk 黄昏 (dinner) */
   --c-dusk-1: #E3D6C2;
   --c-dusk-2: #D9B89A;
   --c-dusk-3: #B8CCDD;
-
-  /* Night 夜晚 (dessert) */
   --c-night-1: #2F3A44;
   --c-night-2: #5A4640;
   --c-night-3: #8B3A2A;
-
-  /* ─── Period Gradient Stops (for entrance animation backgrounds) ───── */
-  /* Morning 早晨 */
-  --g-morning-top: #F5E6D3;
-  --g-morning-mid: #E0C498;
-  --g-morning-bottom: #C9A84C;
-
-  /* Afternoon 下午 */
-  --g-afternoon-top: #E8EFF5;
-  --g-afternoon-mid: #C0CED8;
-  --g-afternoon-bottom: #EBE3D3;
-
-  /* Dusk 黄昏 */
-  --g-dusk-top: #2E1F1A;
-  --g-dusk-mid: #7A4F3A;
-  --g-dusk-bottom: #D4956B;
-
-  /* Night 夜晚 */
-  --g-night-top: #0F1923;
-  --g-night-mid: #283445;
-  --g-night-bottom: #7A808A;
 }
 
 html, body, #root {
@@ -94,7 +64,7 @@ body {
   display: none;
 }
 
-/* ─── Animations ─────────────────────────────────────────── */
+/* ─── Base motion ─────────────────────────────────────── */
 @keyframes slowZoom {
   from { transform: scale(1); }
   to { transform: scale(1.08); }
@@ -120,7 +90,6 @@ body {
 .fade-up-delay-4 { animation: fadeUp 0.9s 0.72s ease-out both; }
 .stamp-in { animation: stampIn 0.6s cubic-bezier(.17,.67,.3,1.3) both; }
 
-/* Eyebrow micro-animations */
 @keyframes numPop {
   0% { transform: scale(0.3); opacity: 0; }
   60% { transform: scale(1.18); }
@@ -130,9 +99,7 @@ body {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
-.animate-num-pop {
-  animation: numPop 0.55s 0.12s cubic-bezier(.17,.67,.3,1.3) both;
-}
+.animate-num-pop { animation: numPop 0.55s 0.12s cubic-bezier(.17,.67,.3,1.3) both; }
 .animate-line-draw {
   animation: lineDraw 0.7s 0.3s cubic-bezier(.2,.7,.2,1) both;
   transform-origin: left;
@@ -150,368 +117,43 @@ body {
   filter: blur(0);
 }
 
-/* ─── Time Phase Intro Animations (Redesigned) ─────────── */
-@keyframes introLightExpand {
-  0%   { transform: scale(0.2); opacity: 0; }
-  30%  { opacity: 0.9; }
-  100% { transform: scale(1); opacity: 0; }
+/* ─── Hero motion ─────────────────────────────────────── */
+@keyframes heroKenBurns {
+  0%   { transform: scale(1) translate3d(0, 0, 0); }
+  20%  { transform: scale(1.08) translate3d(-3%, -2%, 0); }
+  40%  { transform: scale(1.12) translate3d(2%, -3%, 0); }
+  60%  { transform: scale(1.10) translate3d(3%, 2%, 0); }
+  80%  { transform: scale(1.06) translate3d(-2%, 1%, 0); }
+  100% { transform: scale(1) translate3d(0, 0, 0); }
 }
-@keyframes introLineDraw {
-  0%   { transform: scaleX(0); opacity: 0; }
-  50%  { opacity: 1; }
-  100% { transform: scaleX(1); opacity: 0.8; }
+@keyframes heroGradientBreathe {
+  0%, 100% { opacity: 0.6; transform: scaleY(0.95); }
+  50%      { opacity: 1; transform: scaleY(1); }
 }
-@keyframes introDotPulse {
-  0%, 100% { transform: scale(0.5); opacity: 0; }
-  50%      { transform: scale(1); opacity: 1; }
+@keyframes heroTextFade {
+  0%   { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
-@keyframes introSoftFade {
-  0%   { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
+@keyframes heroSubtitleFade {
+  0%   { opacity: 0; transform: translateY(20px); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
-@keyframes introEmerge {
-  0%   { opacity: 0; transform: translateY(16px) scale(0.98); }
-  60%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+@keyframes heroBadgeFade {
+  0%   { opacity: 0; transform: translateY(15px) scale(0.85); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-@keyframes introDust {
-  0%, 100% { opacity: 0.2; }
-  50%      { opacity: 0.6; }
-}
-@keyframes introSweep {
-  0%   { transform: translateX(-120%); opacity: 0; }
-  50%  { opacity: 0.7; }
-  100% { transform: translateX(120%); opacity: 0; }
-}
-@keyframes introConstellation {
-  0%, 100% { opacity: 0.15; }
-  50%      { opacity: 0.6; }
-}
-@keyframes introNightGlow {
-  0%   { box-shadow: 0 0 20px 4px rgba(184, 204, 221, 0); opacity: 0.3; }
-  50%  { box-shadow: 0 0 40px 8px rgba(184, 204, 221, 0.15); opacity: 0.5; }
-  100% { box-shadow: 0 0 20px 4px rgba(184, 204, 221, 0); opacity: 0.3; }
+@keyframes heroEyebrowFade {
+  0%   { opacity: 0; transform: translateY(-12px); letter-spacing: 0.2em; }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.4em; }
 }
 
-@keyframes floatParticle {
-  0%   { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0; }
-  20%  { opacity: 0.9; }
-  60%  { transform: translate3d(18px, -55px, 0) scale(1); opacity: 0.75; }
-  100% { transform: translate3d(-6px, -110px, 0) scale(0.8); opacity: 0; }
-}
-@keyframes driftCloud {
-  0%   { transform: translate3d(-20px, 0, 0) scale(0.95); opacity: 0.55; }
-  50%  { transform: translate3d(30px, -4px, 0) scale(1);    opacity: 0.85; }
-  100% { transform: translate3d(80px, 0, 0) scale(0.95);  opacity: 0.55; }
-}
-@keyframes shimmerSpot {
-  0%, 100% { transform: scale(0.85) rotate(0deg);   opacity: 0.4; }
-  50%      { transform: scale(1.15) rotate(12deg); opacity: 0.9; }
-}
-@keyframes fallEmber {
-  0%   { transform: translate3d(0, -10px, 0) scale(0.8); opacity: 0; }
-  15%  { opacity: 1; }
-  50%  { transform: translate3d(12px, 55px, 0) scale(1);   opacity: 0.9; }
-  100% { transform: translate3d(-8px, 130px, 0) scale(0.7); opacity: 0; }
-}
-@keyframes flyAcross {
-  0%   { transform: translate3d(0, 0, 0) scaleX(0.9);  opacity: 0; }
-  10%  { opacity: 1; }
-  50%  { transform: translate3d(55vw, -18px, 0) scaleX(1); opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translate3d(110vw, 10px, 0) scaleX(0.9); opacity: 0; }
-}
-@keyframes twinkleStar {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0.25; }
-  50%      { transform: translate3d(0, -2px, 0) scale(1.2); opacity: 1; }
-}
-@keyframes shootStar {
-  0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
-  8%   { opacity: 1; }
-  60%  { opacity: 1; }
-  100% { transform: translate3d(-180px, 110px, 0) rotate(-25deg); opacity: 0; }
-}
-@keyframes flickerBeam {
-  0%, 100% { transform: scaleY(0.6) rotate(0deg); opacity: 0.25; }
-  50%      { transform: scaleY(1) rotate(2deg);  opacity: 0.75; }
-}
+.hero-ken-burns { animation: heroKenBurns 20s ease-in-out infinite; transform-origin: center; }
+.hero-gradient-breathe { animation: heroGradientBreathe 4s ease-in-out infinite; }
+.hero-text-fade { animation: heroTextFade 0.9s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
+.hero-subtitle-fade { animation: heroSubtitleFade 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
+.hero-badge-fade { animation: heroBadgeFade 0.7s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
+.hero-eyebrow-fade { animation: heroEyebrowFade 1s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
 
-/* ─── Minimalist Editorial Entrance Animations ──────────── */
-@keyframes entranceGlyph {
-  0%   { opacity: 0; transform: scale(0.92); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes entranceFadeUp {
-  0%   { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes entranceEmerge {
-  0%   { opacity: 0; transform: scale(0.94); }
-  60%  { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.entrance-glyph {
-  opacity: 0;
-  animation: entranceGlyph 0.9s cubic-bezier(0.2,0.8,0.2,1) forwards;
-}
-.entrance-eyebrow {
-  opacity: 0;
-  animation: entranceFadeUp 0.5s ease-out 0.3s forwards;
-}
-.entrance-title-wrap {
-  opacity: 0;
-  animation: entranceEmerge 0.7s cubic-bezier(0.2,0.8,0.2,1) 0.5s forwards;
-}
-.entrance-subtitle-wrap {
-  opacity: 0;
-  animation: entranceFadeUp 0.5s ease-out 0.7s forwards;
-}
-.entrance-divider {
-  opacity: 0;
-  animation: entranceFadeUp 0.6s ease-out 0.9s forwards;
-}
-.entrance-country {
-  opacity: 0;
-  animation: entranceFadeUp 0.5s ease-out 1.1s forwards;
-}
-.entrance-edge {
-  opacity: 0;
-  animation: entranceFadeUp 0.5s ease-out 1.3s forwards;
-}
-
-@keyframes entranceBreathe {
-  0%, 100% { transform: scale(1); opacity: 0.85; }
-  50% { transform: scale(1.06); opacity: 1; }
-}
-@keyframes entranceSlowSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.entrance-breathe { animation: entranceBreathe 4s ease-in-out infinite; }
-.entrance-slow-spin { animation: entranceSlowSpin 60s linear infinite; }
-
-/* ─── MG Animation Keyframes (Enhanced) ───────────────────────────── */
-
-/* Morning: Light sweep + beam rotation */
-@keyframes mgLightSweep {
-  0%   { transform: translateX(-100%) skewX(-20deg); opacity: 0; }
-  20%  { opacity: 0.7; }
-  100% { transform: translateX(100%) skewX(-20deg); opacity: 0; }
-}
-@keyframes mgBeamRotate {
-  0%   { transform: rotate(0deg); opacity: 0; }
-  30%  { opacity: 0.5; }
-  100% { transform: rotate(360deg); opacity: 0; }
-}
-@keyframes mgFloatShape {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(8px, -12px) rotate(2deg); }
-  50% { transform: translate(-6px, 8px) rotate(-1deg); }
-  75% { transform: translate(10px, 6px) rotate(1.5deg); }
-}
-@keyframes mgParticleFloat {
-  0%   { transform: translateY(0) translateX(0); opacity: 0; }
-  10%  { opacity: 0.8; }
-  100% { transform: translateY(-80px) translateX(20px); opacity: 0; }
-}
-@keyframes mgParticleFloat2 {
-  0%   { transform: translateY(0) translateX(0); opacity: 0; }
-  15%  { opacity: 0.6; }
-  100% { transform: translateY(-60px) translateX(-25px); opacity: 0; }
-}
-@keyframes mgParticleFloat3 {
-  0%   { transform: translateY(0) translateX(0); opacity: 0; }
-  12%  { opacity: 0.7; }
-  100% { transform: translateY(-100px) translateX(10px); opacity: 0; }
-}
-@keyframes mgStaggerUp {
-  0%   { opacity: 0; transform: translateY(25px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes mgMaskReveal {
-  0%   { clip-path: inset(0 100% 0 0); opacity: 0; }
-  40%  { opacity: 1; }
-  100% { clip-path: inset(0 0 0 0); opacity: 1; }
-}
-@keyframes mgStrokeDraw {
-  0%   { stroke-dashoffset: 200; opacity: 0; }
-  30%  { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-@keyframes mgStrokeDrawReverse {
-  0%   { stroke-dashoffset: -200; opacity: 0; }
-  30%  { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-@keyframes mgShapeMorph {
-  0%, 100% { border-radius: 60% 40% 50% 50% / 50% 55% 45% 50%; }
-  25% { border-radius: 40% 60% 55% 45% / 55% 45% 60% 40%; }
-  50% { border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%; }
-  75% { border-radius: 45% 55% 60% 40% / 60% 40% 55% 45%; }
-}
-@keyframes mgGradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
-}
-@keyframes mgExpandingRing {
-  0%   { transform: scale(0.3); opacity: 0; }
-  30%  { opacity: 0.8; }
-  70%  { opacity: 0.3; }
-  100% { transform: scale(2.5); opacity: 0; }
-}
-@keyframes mgStarTwinkle {
-  0%, 100% { opacity: 0.2; transform: scale(0.5); filter: brightness(0.5) hue-rotate(0deg); }
-  25%      { opacity: 0.9; transform: scale(0.85); filter: brightness(0.9) hue-rotate(15deg); }
-  50%      { opacity: 1; transform: scale(var(--twinkle-scale, 1.5)); filter: brightness(1.5) hue-rotate(30deg); }
-  75%      { opacity: 0.7; transform: scale(0.95); filter: brightness(0.8) hue-rotate(10deg); }
-}
-@keyframes mgEntranceBreathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.012); }
-}
-@keyframes mgMoonBreathe {
-  0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 12px rgba(220,230,250,0.4)); }
-  50%      { transform: scale(1.06); filter: brightness(1.3) drop-shadow(0 0 24px rgba(220,230,250,0.6)); }
-}
-@keyframes mgProgressBreathe {
-  0%, 100% { opacity: 0.7; }
-  50%      { opacity: 1; }
-}
-@keyframes mgGrainDrift {
-  0%   { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(30px) translateY(-20px); }
-}
-@keyframes mgBlurReveal {
-  0%   { filter: blur(12px); opacity: 0; }
-  100% { filter: blur(0); opacity: 1; }
-}
-@keyframes mgScaleIn {
-  0%   { transform: scale(1.4); opacity: 0; filter: blur(8px); }
-  100% { transform: scale(1); opacity: 1; filter: blur(0); }
-}
-@keyframes mgColorShift {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50%      { filter: hue-rotate(15deg); }
-}
-
-/* Enhanced MG animations */
-@keyframes mgEmberFloat {
-  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
-  10%  { opacity: 0.9; }
-  50%  { transform: translate3d(15px, -80px, 0) scale(0.9); opacity: 0.7; }
-  100% { transform: translate3d(-5px, -160px, 0) scale(0.6); opacity: 0; }
-}
-@keyframes mgCloudDrift {
-  0%   { transform: translate3d(-30px, 0, 0) scale(0.95); opacity: 0.4; }
-  50%  { transform: translate3d(40px, -6px, 0) scale(1.05); opacity: 0.7; }
-  100% { transform: translate3d(90px, 0, 0) scale(0.95); opacity: 0.4; }
-}
-@keyframes mgSunPulse {
-  0%, 100% { transform: scale(1); filter: brightness(1); }
-  50%      { transform: scale(1.08); filter: brightness(1.15); }
-}
-@keyframes mgRayRotate {
-  0%   { transform: rotate(0deg); opacity: 0.4; }
-  50%  { opacity: 0.7; }
-  100% { transform: rotate(15deg); opacity: 0.4; }
-}
-@keyframes mgMoonGlow {
-  0%, 100% { transform: scale(1); filter: brightness(1); }
-  50%      { transform: scale(1.04); filter: brightness(1.15); }
-}
-@keyframes mgShootingStar {
-  0%   { transform: translate3d(0, 0, 0) rotate(-20deg); opacity: 0; }
-  5%   { opacity: 1; }
-  40%  { opacity: 1; }
-  60%  { opacity: 0; }
-  100% { transform: translate3d(-200px, 120px, 0) rotate(-20deg); opacity: 0; }
-}
-@keyframes mgHorizonPulse {
-  0%, 100% { opacity: 0.6; transform: scaleX(1); }
-  50%      { opacity: 0.9; transform: scaleX(1.05); }
-}
-@keyframes mgBirdFly {
-  0%   { transform: translate3d(-20px, 0, 0) scaleX(1); opacity: 0; }
-  10%  { opacity: 1; }
-  50%  { transform: translate3d(50px, -15px, 0) scaleX(1); opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translate3d(120px, 5px, 0) scaleX(0.9); opacity: 0; }
-}
-@keyframes mgGradientFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes mgTitleBreathe {
-  0%, 100% { transform: scale(1) translateY(0); }
-  50%      { transform: scale(1.045) translateY(-4px); }
-}
-@keyframes mgSubtitleBreathe {
-  0%, 100% { opacity: 0.4; transform: translateY(0); }
-  50%      { opacity: 1; transform: translateY(-3px); }
-}
-@keyframes mgEyebrowBreathe {
-  0%, 100% { opacity: 0.4; }
-  50%      { opacity: 1; }
-}
-@keyframes mgContainerDrift {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  25%      { transform: translate3d(6px, -4px, 0); }
-  50%      { transform: translate3d(-3px, -8px, 0); }
-  75%      { transform: translate3d(-6px, 2px, 0); }
-}
-@keyframes mgProgressPulse {
-  0%, 100% { transform: scaleX(1); opacity: 0.5; }
-  50%      { transform: scaleX(1.08); opacity: 1; }
-}
-@keyframes mgVisualBreathe {
-  0%, 100% { transform: scale(1) translateY(0); }
-  50%      { transform: scale(1.025) translateY(-6px); }
-}
-@keyframes mgGlowBreathe {
-  0%, 100% { filter: brightness(0.92) saturate(0.95); }
-  50%      { filter: brightness(1.12) saturate(1.08); }
-}
-
-/* Hero card — Ken Burns + breathing */
-@keyframes mgHeroKenBurns {
-    0%   { transform: scale(1) translate3d(0, 0, 0); }
-    20%  { transform: scale(1.08) translate3d(-3%, -2%, 0); }
-    40%  { transform: scale(1.12) translate3d(2%, -3%, 0); }
-    60%  { transform: scale(1.10) translate3d(3%, 2%, 0); }
-    80%  { transform: scale(1.06) translate3d(-2%, 1%, 0); }
-    100% { transform: scale(1) translate3d(0, 0, 0); }
-  }
-  @keyframes mgHeroGradientBreathe {
-    0%, 100% { opacity: 0.6; transform: scaleY(0.95); }
-    50%      { opacity: 1; transform: scaleY(1); }
-  }
-  @keyframes mgHeroTextFade {
-    0%   { opacity: 0; transform: translateY(30px); filter: blur(10px); }
-    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-  }
-  @keyframes mgHeroSubtitleFade {
-    0%   { opacity: 0; transform: translateY(20px); filter: blur(8px); }
-    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-  }
-  @keyframes mgHeroBadgeFade {
-    0%   { opacity: 0; transform: translateY(15px) scale(0.85); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
-  }
-  @keyframes mgHeroEyebrowFade {
-    0%   { opacity: 0; transform: translateY(-12px); letter-spacing: 0.2em; }
-    100% { opacity: 1; transform: translateY(0); letter-spacing: 0.4em; }
-  }
-
-.hero-ken-burns { animation: mgHeroKenBurns 20s ease-in-out infinite; transform-origin: center; }
-.hero-gradient-breathe { animation: mgHeroGradientBreathe 4s ease-in-out infinite; }
-.hero-text-fade { animation: mgHeroTextFade 0.9s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-.hero-subtitle-fade { animation: mgHeroSubtitleFade 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-.hero-badge-fade { animation: mgHeroBadgeFade 0.7s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-.hero-eyebrow-fade { animation: mgHeroEyebrowFade 1s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-
-/* Delay utility for hero text */
 .hero-delay-150 { animation-delay: 0.15s; }
 .hero-delay-300 { animation-delay: 0.3s; }
 .hero-delay-450 { animation-delay: 0.45s; }
@@ -519,168 +161,76 @@ body {
 .hero-delay-750 { animation-delay: 0.75s; }
 .hero-delay-900 { animation-delay: 0.9s; }
 
-/* MG Animation utility classes */
-.mg-light-sweep { animation: mgLightSweep 1.2s cubic-bezier(0.2,0.8,0.2,1) forwards; }
-.mg-beam-rotate { animation: mgBeamRotate 3s linear forwards; }
-.mg-float-shape { animation: mgFloatShape 6s ease-in-out infinite; }
-.mg-stagger-up { animation: mgStaggerUp 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-.mg-mask-reveal { animation: mgMaskReveal 1s cubic-bezier(0.77,0,0.18,1) forwards; opacity: 0; }
-.mg-stroke-draw { stroke-dasharray: 200; animation: mgStrokeDraw 1.5s cubic-bezier(0.65,0,0.35,1) forwards; opacity: 0; }
-.mg-stroke-draw-reverse { stroke-dasharray: 200; animation: mgStrokeDrawReverse 1.5s cubic-bezier(0.65,0,0.35,1) forwards; opacity: 0; }
-.mg-shape-morph { animation: mgShapeMorph 8s ease-in-out infinite; }
-.mg-gradient-shift {
-  background-size: 300% 300%;
-  animation: mgGradientShift 6s ease infinite;
+/* ─── Time period intro ───────────────────────────────── */
+.intro-bg-fade { animation: introBgFade 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.intro-visual-in { animation: introVisualIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.intro-eyebrow-in { animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+.intro-title-in { animation: introTextUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+.intro-subtitle-in { animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+.intro-progress-in { animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both; }
+.intro-country-in { animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s both; }
+.intro-glow-drift { animation: introGlowDrift 8s ease-in-out infinite alternate; }
+.intro-progress-bar { animation: introProgressFill 2.3s cubic-bezier(0.65, 0, 0.35, 1) 0.3s both; }
+
+@keyframes introBgFade {
+  from { opacity: 0; filter: brightness(1.1); }
+  to { opacity: 1; filter: brightness(1); }
 }
-.mg-expanding-ring { animation: mgExpandingRing 2s cubic-bezier(0.22,1,0.36,1) forwards; }
-.mg-star-twinkle { animation: mgStarTwinkle 2.5s ease-in-out infinite; }
-.mg-blur-reveal { animation: mgBlurReveal 1s cubic-bezier(0.2,0.8,0.2,1) forwards; opacity: 0; }
-.mg-scale-in { animation: mgScaleIn 1.2s cubic-bezier(0.22,1,0.36,1) forwards; opacity: 0; }
-
-.mg-particle-1 { animation: mgParticleFloat 3s cubic-bezier(0.4,0,0.6,1) infinite; opacity: 0; }
-.mg-particle-2 { animation: mgParticleFloat2 3.5s cubic-bezier(0.4,0,0.6,1) infinite; opacity: 0; }
-.mg-particle-3 { animation: mgParticleFloat3 4s cubic-bezier(0.4,0,0.6,1) infinite; opacity: 0; }
-
-/* Enhanced utility classes */
-.mg-ember-float { animation: mgEmberFloat 4s cubic-bezier(0.4,0,0.6,1) infinite; opacity: 0; }
-.mg-cloud-drift { animation: mgCloudDrift 8s ease-in-out infinite; }
-.mg-sun-pulse { animation: mgSunPulse 4s ease-in-out infinite; }
-.mg-ray-rotate { animation: mgRayRotate 20s ease-in-out infinite; }
-.mg-moon-glow { animation: mgMoonGlow 5s ease-in-out infinite; transform-origin: center; }
-.mg-moon-breathe { animation: mgMoonBreathe 4s ease-in-out infinite; transform-origin: center; }
-.mg-entrance-breathe { animation: mgEntranceBreathe 3.5s ease-in-out infinite; transform-origin: center; }
-.mg-progress-breathe { animation: mgProgressBreathe 2s ease-in-out infinite; }
-.mg-shooting-star { animation: mgShootingStar 1.5s cubic-bezier(0.4,0,0.6,1) forwards; }
-.mg-horizon-pulse { animation: mgHorizonPulse 3s ease-in-out infinite; }
-.mg-bird-fly { animation: mgBirdFly 3s cubic-bezier(0.4,0,0.6,1) forwards; }
-.mg-gradient-flow {
-  background-size: 200% 100%;
-  animation: mgGradientFlow 8s ease infinite;
+@keyframes introVisualIn {
+  from { opacity: 0; transform: scale(0.92); filter: blur(8px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+@keyframes introTextUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes introGlowDrift {
+  from { transform: translateY(0) scale(1); opacity: 0.8; }
+  to { transform: translateY(-8px) scale(1.05); opacity: 1; }
+}
+@keyframes introProgressFill {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
-/* Breathing animation utility classes */
-.mg-title-breathe { animation: mgTitleBreathe 4s ease-in-out infinite; transform-origin: center; }
-.mg-subtitle-breathe { animation: mgSubtitleBreathe 4s ease-in-out infinite; }
-.mg-eyebrow-breathe { animation: mgEyebrowBreathe 4s ease-in-out infinite; }
-.mg-container-drift { animation: mgContainerDrift 6s ease-in-out infinite; }
-.mg-progress-pulse { animation: mgProgressPulse 2.5s ease-in-out infinite; transform-origin: center; }
-.mg-visual-breathe { animation: mgVisualBreathe 5s ease-in-out infinite; transform-origin: center; }
-.mg-glow-breathe { animation: mgGlowBreathe 4s ease-in-out infinite; }
+/* ─── Overlays & cart ─────────────────────────────────── */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up { animation: slideUp 0.35s cubic-bezier(.2,.7,.2,1); }
 
-.mg-delay-100 { animation-delay: 0.1s; }
-.mg-delay-200 { animation-delay: 0.2s; }
-.mg-delay-300 { animation-delay: 0.3s; }
-.mg-delay-400 { animation-delay: 0.4s; }
-.mg-delay-500 { animation-delay: 0.5s; }
-.mg-delay-600 { animation-delay: 0.6s; }
-.mg-delay-700 { animation-delay: 0.7s; }
-.mg-delay-800 { animation-delay: 0.8s; }
-.mg-delay-900 { animation-delay: 0.9s; }
-.mg-delay-1000 { animation-delay: 1s; }
-.mg-delay-1200 { animation-delay: 1.2s; }
-.mg-delay-1500 { animation-delay: 1.5s; }
-.mg-delay-2000 { animation-delay: 2s; }
-.mg-delay-2500 { animation-delay: 2.5s; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.35s ease-out both; }
 
-/* Kinetic typography: text reveal from center */
-.mg-text-reveal {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.92) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
-.mg-text-reveal::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  transform-origin: left center;
-  animation: mgTextRevealMask 1.2s cubic-bezier(0.77,0,0.18,1) forwards;
-}
-@keyframes mgTextRevealMask {
-  0%   { transform: scaleX(1); transform-origin: left center; }
-  50%  { transform: scaleX(0); transform-origin: left center; }
-  51%  { transform-origin: right center; }
-  100% { transform: scaleX(0); transform-origin: right center; }
-}
+.animate-pop-in { animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 
-/* Grain texture layer */
-.mg-grain-layer {
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  animation: mgGrainDrift 8s linear infinite alternate;
+@keyframes cartBounce {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.06); }
+  40% { transform: scale(0.97); }
+  60% { transform: scale(1.03); }
+  80% { transform: scale(0.99); }
+  100% { transform: scale(1); }
 }
+.animate-cart-bounce { animation: cartBounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97); }
 
-/* ─── Progress Bar Animation ────────────────────────────── */
-@keyframes mgProgressFill {
-  0%   { transform: scaleX(0); transform-origin: left center; }
-  60%  { transform: scaleX(1); transform-origin: left center; }
-  65%  { transform: scaleX(1); transform-origin: right center; }
-  100% { transform: scaleX(0); transform-origin: right center; }
+@keyframes addFly {
+  0% { transform: scale(1) rotate(0deg); }
+  30% { transform: scale(1.4) rotate(90deg); }
+  60% { transform: scale(0.85) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
 }
-@keyframes mgTextBlurred {
-  0%   { filter: blur(18px); opacity: 0; transform: scale(1.08); }
-  100% { filter: blur(0); opacity: 1; transform: scale(1); }
-}
-@keyframes mgSubtitleSlide {
-  0%   { opacity: 0; transform: translateY(14px); letter-spacing: 0.1em; }
-  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.02em; }
-}
-@keyframes mgSimplePulse {
-  0%, 100% { opacity: 0.4; transform: scale(0.95); }
-  50%      { opacity: 0.7; transform: scale(1.05); }
-}
-@keyframes mgRingExpand {
-  0%   { transform: scale(0.4); opacity: 0; }
-  20%  { opacity: 0.6; }
-  80%  { opacity: 0.2; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
-@keyframes mgStarAppear {
-  0%   { opacity: 0; transform: scale(0); }
-  60%  { opacity: 1; transform: scale(1.3); }
-  100% { opacity: 0.8; transform: scale(1); }
-}
-@keyframes mgTextLetterSpace {
-  0%   { letter-spacing: '0.15em'; opacity: 0; }
-  50%  { letter-spacing: '0.08em'; opacity: 1; }
-  100% { letter-spacing: '-0.04em'; opacity: 1; }
-}
+.animate-add-fly { animation: addFly 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
 
-/* Progress bar utility */
-.mg-progress-fill {
-  animation: mgProgressFill 2.3s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-}
-.mg-text-blurred {
-  animation: mgTextBlurred 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
-  opacity: 0;
-}
-.mg-subtitle-slide {
-  animation: mgSubtitleSlide 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
-  opacity: 0;
-}
-.mg-simple-pulse {
-  animation: mgSimplePulse 3s ease-in-out infinite;
-}
-.mg-ring-expand {
-  animation: mgRingExpand 2.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.mg-star-appear {
-  animation: mgStarAppear 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  opacity: 0;
-}
-.mg-letter-space {
-  animation: mgTextLetterSpace 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-  opacity: 0;
-}
-
-/* ─── Reduced motion support ────────────────────────────── */
+/* ─── Reduced motion ──────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -692,22 +242,18 @@ body {
   }
 }
 
-
-/* hide number input spinners */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Nav blur */
 .glass-nav {
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   background-color: rgba(243, 236, 224, 0.78);
 }
 
-/* Screen transitions */
 .screen-wrap {
   position: absolute;
   inset: 0;
@@ -730,159 +276,12 @@ input[type=number]::-webkit-inner-spin-button {
 button {
   transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
-/* ─── 极简入场动画核心样式 ─── */
-.intro-bg-fade {
-  animation: introBgFade 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.intro-visual-in {
-  animation: introVisualIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-.intro-eyebrow-in {
-  animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-}
-
-.intro-title-in {
-  animation: introTextUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
-}
-
-.intro-subtitle-in {
-  animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
-}
-
-.intro-progress-in {
-  animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
-}
-
-.intro-country-in {
-  animation: introTextUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s both;
-}
-
-.intro-glow-drift {
-  animation: introGlowDrift 8s ease-in-out infinite alternate;
-}
-
-.intro-progress-bar {
-  animation: introProgressFill 2.3s cubic-bezier(0.65, 0, 0.35, 1) 0.3s both;
-}
-
-@keyframes introBgFade {
-  from {
-    opacity: 0;
-    filter: brightness(1.1);
-  }
-  to {
-    opacity: 1;
-    filter: brightness(1);
-  }
-}
-
-@keyframes introVisualIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-    filter: blur(8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes introTextUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes introGlowDrift {
-  from {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
-  }
-  to {
-    transform: translateY(-8px) scale(1.05);
-    opacity: 1;
-  }
-}
-
-@keyframes introProgressFill {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-up {
-  animation: slideUp 0.35s cubic-bezier(.2,.7,.2,1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.animate-fade-in {
-  animation: fadeIn 0.35s ease-out both;
-}
 
 .line-clamp-1 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-@keyframes cartBounce {
-  0% { transform: scale(1); }
-  20% { transform: scale(1.06); }
-  40% { transform: scale(0.97); }
-  60% { transform: scale(1.03); }
-  80% { transform: scale(0.99); }
-  100% { transform: scale(1); }
-}
-
-.animate-cart-bounce {
-  animation: cartBounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
-}
-
-@keyframes addFly {
-  0% { transform: scale(1) rotate(0deg); }
-  30% { transform: scale(1.4) rotate(90deg); }
-  60% { transform: scale(0.85) rotate(180deg); }
-  100% { transform: scale(1) rotate(360deg); }
-}
-
-.animate-add-fly {
-  animation: addFly 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes flyToCart {
-  0% { transform: translate(0, 0) scale(1); opacity: 1; }
-  100% { transform: translate(var(--fly-x, 180px), var(--fly-y, -40px)) scale(0.3); opacity: 0; }
-}
-
-.animate-fly-to-cart {
-  animation: flyToCart 0.6s cubic-bezier(0.5, -0.2, 0.5, 1);
 }
 
 .scrollbar-hide {

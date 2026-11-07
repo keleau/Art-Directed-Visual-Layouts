@@ -1,35 +1,39 @@
-# figma-make-app
+# flavor-atlas
 
-React + Vite + Tailwind CSS project running inside Figma Make.
+React 19 + Vite 8 + Tailwind CSS 4 的移动端美食探索应用，使用 JavaScript / JSX（无 TypeScript）。
 
-## Development Server
+## 开发
 
-A Vite development server is **already running** on `$PORT` (default 8443). You don't need to start it manually.
+```bash
+npm install
+npm run dev
+```
 
-- Preview URL: The user can access the running app through the preview panel
-- Hot reload: Changes to source files are reflected immediately
+开发服务器默认运行在 `http://localhost:8443`（可用 `PORT` 环境变量覆盖）。预览面板会自动显示。
 
-## Project Structure
+## 构建
 
-This is the canonical project structure. Start with task-relevant files below. Only follow imports or inspect other files when required, when a documented path is missing, or when the repository contradicts this guide.
+```bash
+npm run build
+npm run preview
+```
 
-- `src/main.tsx` - React entrypoint; imports `src/index.css` and mounts `src/App.tsx` into the `#root` element
-- `src/App.tsx` - Primary application component and the usual starting point for UI work
-- `src/index.css` - Global CSS entrypoint and Tailwind CSS v4 import
-- `index.html` - Vite HTML shell containing the `#root` element and loading `src/main.tsx`
-- `package.json` - Project dependencies and the Vite build, development, preview, and formatting scripts
-- `vite.config.ts` - Vite configuration with React, Tailwind CSS v4, and Figma Make plugins plus the `@` alias for `src`
-- `.mise.toml` - Toolchain versions for Node.js and pnpm
+## 结构
 
-## Dependencies
+- `src/main.jsx`：入口，挂载 `App`
+- `src/App.jsx`：页面栈、购物车与结算状态
+- `src/screens/`：Explore、Today、Cook、Recipe、Me、Search、Shop、ShopItemDetail、Splash
+- `src/components/`：通用组件（导航、购物车抽屉、结算弹窗、时段入场、产品卡、产品图形、图标等）
+- `src/data/`：图片映射、国家菜谱、每日主厨、商城数据
+- `src/lib/`：食材匹配、产品分组、时段与程序化环境音
+- `src/hooks/`：滚动显现、可拖拽浮动按钮
+- `src/index.css` / `src/fonts.css`：Tailwind 主题、全局动效、自托管字体
+- `public/images/`：本地菜品与场景图片
+- `docs/`：README 截图与图片来源清单
 
-- Runtime: React 19 and React DOM 19
-- Styling: Tailwind CSS v4 with the `@tailwindcss/vite` plugin
-- Build tooling: Vite 8, TypeScript 5.7, and `@vitejs/plugin-react`
-- Formatting: oxfmt
+## 约定
 
-## Styling
-
-This project uses **Tailwind CSS v4** through the `@tailwindcss/vite` plugin configured in `vite.config.ts`. `src/index.css` imports Tailwind with `@import 'tailwindcss';`. Use Tailwind utility classes directly in JSX and put global CSS or Tailwind v4 theme customization in `src/index.css`. This scaffold does not need a Tailwind config file or PostCSS config.
-
-`src/main.tsx` imports `src/index.css`, so global font wiring belongs in `src/index.css`. Keep CSS `@import` statements first, then add any `@font-face` rules and font-family defaults there.
+- 使用 npm 与 `package-lock.json`。
+- 图片与字体全部本地化，运行时不请求外部图床或 Google Fonts。
+- 商城中的菜品使用摄影图；食材与调味料使用统一的“档案卡”视觉（`ProductArtwork`），避免图库图片错配。
+- 演示结算不会产生真实扣款。

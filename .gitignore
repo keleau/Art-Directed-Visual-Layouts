@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env & secrets
+.env
+.env.*
+!.env.example
+
+# Editor / agent workspace
+.vscode/
+.trae/
+.claude/
+.figma/
+.idea/
+
+# Logs & OS files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# TypeScript build info (legacy)
+*.tsbuildinfo
+
+# Local-only archive (never published)
+.local/
