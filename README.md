@@ -34,18 +34,18 @@
 ## 页面截图
 
 <p align="center">
-  <img src="docs/screenshots/02-explore.png" width="24%" alt="探索页" />
-  <img src="docs/screenshots/06-today.png" width="24%" alt="今日页" />
-  <img src="docs/screenshots/10-cook.png" width="24%" alt="厨房页" />
-  <img src="docs/screenshots/12-shop.png" width="24%" alt="市集页" />
+  <img src="docs/screenshots/02-explore.jpg" width="24%" alt="探索页" />
+  <img src="docs/screenshots/06-today.jpg" width="24%" alt="今日页" />
+  <img src="docs/screenshots/10-cook.jpg" width="24%" alt="厨房页" />
+  <img src="docs/screenshots/12-shop.jpg" width="24%" alt="市集页" />
 </p>
 <p align="center"><sub>探索 · 今日 · 厨房 · 市集</sub></p>
 
 <p align="center">
-  <img src="docs/screenshots/08-recipe.png" width="24%" alt="菜谱页" />
-  <img src="docs/screenshots/13-shop-item-artwork.png" width="24%" alt="食材详情" />
-  <img src="docs/screenshots/16-cart.png" width="24%" alt="购物车" />
-  <img src="docs/screenshots/17-checkout.png" width="24%" alt="结算弹窗" />
+  <img src="docs/screenshots/08-recipe.jpg" width="24%" alt="菜谱页" />
+  <img src="docs/screenshots/13-shop-item-artwork.jpg" width="24%" alt="食材详情" />
+  <img src="docs/screenshots/16-cart.jpg" width="24%" alt="购物车" />
+  <img src="docs/screenshots/17-checkout.jpg" width="24%" alt="结算弹窗" />
 </p>
 <p align="center"><sub>菜谱 · 食材档案 · 购物车 · 结算</sub></p>
 
